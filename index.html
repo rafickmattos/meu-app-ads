@@ -1,96 +1,496 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Marque Rafique | Developer</title>
+    <meta name="description" content="Marque Rafique — Estudante de Análise e Desenvolvimento de Sistemas. Desenvolvedor Android, projetos IoT com ESP32 e aplicações Web.">
+    <meta name="keywords" content="Android, ESP32, IoT, Desenvolvedor, Web, Mobile">
+    <meta property="og:title" content="Marque Rafique | Developer">
+    <meta property="og:description" content="Estudante e desenvolvedor focado em soluções mobile e hardware inteligente.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marquerafique.com.br">
+    <meta property="og:image" content="perfil.png">
+    <link rel="icon" href="favicon.ico">
+
     <style>
         :root {
             --primary: #2563eb;
-            --dark: #0f172a;
+            --bg: #0f172a;
+            --card: #0b1220;
+            --muted: #94a3b8;
             --light: #f8fafc;
+            --glass: rgba(255,255,255,0.03);
+            --radius: 12px;
+            --maxw: 1100px;
         }
+
+        /* Reset & layout */
+        * {
+            box-sizing: border-box
+        }
+
+        html, body {
+            height: 100%
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--dark);
-            color: var(--light);
             margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg,var(--bg),#071024 120%);
+            color: var(--light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .page {
+            width: 100%;
+            max-width: var(--maxw);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .brand {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg,var(--primary),#7c3aed);
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            text-align: center;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+            overflow: hidden;
+            flex: 0 0 56px;
         }
-        .container {
-            padding: 2rem;
-            max-width: 600px;
+
+            .avatar img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+                display: block;
+            }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 1rem;
+            font-size: 0.95rem;
+            transition: color 0.2s;
         }
+
+            nav a:hover {
+                color: var(--light)
+            }
+
+        main {
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+            backdrop-filter: blur(6px);
+        }
+
+        .hero {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .hero-left {
+            flex: 1 1 320px;
+            min-width: 260px;
+        }
+
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            margin: 0 0 .25rem 0;
             color: var(--primary);
+            font-size: 1.9rem;
         }
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            opacity: 0.8;
+
+        .role {
+            margin: 0 0 .75rem 0;
+            color: var(--muted);
         }
-        .tags {
-            margin: 1.5rem 0;
+
+        .bio {
+            margin: 0 0 1rem 0;
+            line-height: 1.5;
+            color: rgba(248,250,252,0.9);
         }
-        .tag {
-            background: #1e293b;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin: 0.2rem;
-            display: inline-block;
-            border: 1px solid #334155;
+
+        .actions {
+            display: flex;
+            gap: .5rem;
+            flex-wrap: wrap;
         }
-        .links a {
+
+        .btn {
+            display: inline-flex;
+            gap: .5rem;
+            align-items: center;
+            padding: .6rem .9rem;
+            border-radius: 8px;
+            background: var(--glass);
             color: var(--light);
             text-decoration: none;
-            border: 1px solid var(--light);
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.04);
+            transition: transform .12s ease, background .12s ease;
+            font-size: 0.95rem;
+        }
+
+            .btn img.icon {
+                width: 18px;
+                height: 18px;
+                object-fit: contain;
+                display: inline-block;
+            }
+
+            .btn:hover {
+                transform: translateY(-3px);
+                background: rgba(255,255,255,0.08);
+            }
+
+        .primary {
+            background: linear-gradient(90deg,var(--primary),#7c3aed);
+            color: white;
+            border: none
+        }
+
+        .tags {
+            margin: .9rem 0
+        }
+
+        .tag {
             display: inline-block;
-            margin-top: 1rem;
+            background: #0b1220;
+            color: var(--muted);
+            padding: .35rem .65rem;
+            border-radius: 999px;
+            margin-right: .45rem;
+            font-size: .86rem;
+            border: 1px solid rgba(148,163,184,0.06);
         }
-        .links a:hover {
-            background: var(--light);
-            color: var(--dark);
+
+        /* profile picture in hero + parallax */
+        .parallax-container {
+            min-width: 220px;
+            max-width: 260px;
+            perspective: 1000px;
         }
+
+        .parallax-wrapper {
+            width: 100%;
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.03);
+            box-shadow: 0 8px 24px rgba(2,6,23,0.5);
+            background: linear-gradient(135deg,#0b1220,rgba(37,99,235,0.06));
+            will-change: transform;
+        }
+
+        .profile-pic {
+            position: absolute;
+            inset: 0;
+            width: 120%;
+            height: 120%;
+            top: -10%;
+            left: -10%;
+            object-fit: cover;
+            display: block;
+            transform: translate3d(0,0,0);
+            transition: transform 0.12s linear;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        /* Projects */
+        .projects {
+            margin-top: 1.25rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: .75rem;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.03);
+            transition: transform .12s ease, box-shadow .12s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 12px 40px rgba(2,6,23,0.6)
+            }
+
+            .card h3 {
+                margin: .25rem 0 .5rem 0;
+                font-size: 1rem;
+                color: var(--light)
+            }
+
+            .card p {
+                margin: 0 0 .8rem 0;
+                color: var(--muted);
+                font-size: .92rem;
+                line-height: 1.3
+            }
+
+            .card .meta {
+                font-size: .82rem;
+                color: var(--muted)
+            }
+
+        /* footer */
         footer {
-            margin-top: 3rem;
-            font-size: 0.8rem;
-            opacity: 0.5;
+            margin-top: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            color: var(--muted);
+            font-size: .9rem;
+        }
+
+            footer a {
+                color: var(--muted);
+                text-decoration: none;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
+
+        /* responsive tweaks */
+        @media (max-width:720px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start
+            }
+
+            .hero {
+                flex-direction: column
+            }
+
+            .avatar {
+                width: 48px;
+                height: 48px
+            }
+
+            .parallax-container {
+                max-width: 100%;
+                min-width: auto
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .profile-pic {
+                transition: none !important
+            }
         }
     </style>
 </head>
 <body>
+    <a class="skip" href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Pular para o conteúdo</a>
 
-    <div class="container">
-        <h1>Marque Rafique</h1>
-        <p>Estudante de Análise e Desenvolvimento de Sistemas e Desenvolvedor de Soluções Mobile.</p>
-        
-        <div class="tags">
-            <span class="tag">Android Dev</span>
-            <span class="tag">IoT & ESP32</span>
-            <span class="tag">Sistemas Web</span>
-        </div>
+    <div class="page" role="document" aria-labelledby="site-title">
+        <header>
+            <div class="brand">
+                <div class="avatar" aria-hidden="false">
+                    <img src="perfil.png" alt="Foto de Marque Rafique" loading="lazy" decoding="async">
+                </div>
+                <div>
+                    <div id="site-title" style="font-weight:700">Marque Rafique</div>
+                    <div style="font-size:.86rem;color:var(--muted)">Dev Mobile • IoT • Web</div>
+                </div>
+            </div>
 
-        <p>Focado em criar experiências digitais eficientes e projetos de hardware inteligente.</p>
+            <nav aria-label="Navegação principal">
+                <a href="#projetos">Projectos</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#contato">Contacto</a>
+                <a href="privacidade.html">Privacidade</a>
+            </nav>
+        </header>
 
-        <div class="links">
-            <a href="https://play.google.com/store/apps/dev?id=SEU_ID" target="_blank">Ver meus Apps na Play Store</a>
-        </div>
+        <main id="main">
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-left">
+                    <h1 id="hero-title">Marque Rafique</h1>
+                    <p class="role">Estudante de Análise e Desenvolvimento de Sistemas · Desenvolvedor Mobile & IoT</p>
+                    <p class="bio">Crio experiências digitais eficientes e protótipos de hardware com ESP32. Especialista em Android e soluções integradas.</p>
+
+                    <div class="actions" role="group" aria-label="Ações principais">
+                        <a class="btn primary" href="resume.pdf" download>Baixar CV</a>
+                        <a class="btn" href="mailto:suporte@marquerafique.com.br">Suporte (E-mail)</a>
+                        <a class="btn" href="privacidade.html">Privacidade</a>
+                        <a class="btn" href="https://play.google.com/store/apps/dev?id=SEU_ID" target="_blank" rel="noopener noreferrer">Apps na Play Store</a>
+                    </div>
+
+                    <div class="tags" aria-hidden="true">
+                        <span class="tag">Android Dev</span>
+                        <span class="tag">IoT & ESP32</span>
+                        <span class="tag">Sistemas Web</span>
+                    </div>
+                </div>
+
+                <div class="parallax-container" aria-hidden="false">
+                    <div class="parallax-wrapper" id="parallax-wrap" aria-label="Foto de perfil com efeito parallax" role="img">
+                        <img class="profile-pic" src="perfil.png" alt="Foto de Marque Rafique" loading="lazy" decoding="async" data-speed="0.32">
+                    </div>
+                </div>
+            </section>
+
+            <section id="projetos" class="projects" aria-labelledby="projetos-title">
+                <h2 id="projetos-title" style="margin-top:1.25rem;color:var(--primary)">Projectos recentes</h2>
+                <div class="grid" role="list">
+                    <article class="card" role="listitem" aria-labelledby="p1">
+                        <h3 id="p1">Matemágica Kids</h3>
+                        <p>Aplicação Android educativa para crianças, focada na aprendizagem lúdica de conceitos matemáticos.</p>
+                        <div class="meta">Android • Kotlin • AdMob</div>
+                    </article>
+
+                    <article class="card" role="listitem" aria-labelledby="p2">
+                        <h3 id="p2">Ecos do Passado</h3>
+                        <p>Jogo de aventura e narrativa histórica com elementos interativos e foco na experiência do utilizador.</p>
+                        <div class="meta">Mobile • Narrative Engine</div>
+                    </article>
+
+                    <article class="card" role="listitem" aria-labelledby="p3">
+                        <h3 id="p3">Automação com ESP32</h3>
+                        <p>Desenvolvimento de robôs e sistemas inteligentes de hardware para integração com dispositivos IoT.</p>
+                        <div class="meta">C++ • IoT • Hardware</div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="habilidades" style="margin-top:1rem" aria-labelledby="habilidades-title">
+                <h2 id="habilidades-title" style="color:var(--primary)">Habilidades</h2>
+                <p style="color:var(--muted);margin-top:.4rem">Android (Kotlin), ESP32/C++, Web (React/Node), Hardware Inteligente, Firebase, Git.</p>
+            </section>
+
+            <section id="contato" style="margin-top:1rem" aria-labelledby="contato-title">
+                <h2 id="contato-title" style="color:var(--primary)">Contacto</h2>
+                <p style="color:var(--muted);margin-top:.4rem">Precisa de suporte ou quer falar sobre um novo projecto? Escolha o e-mail adequado abaixo.</p>
+                <div style="margin-top:.6rem;display:flex;gap:.5rem;flex-wrap:wrap">
+                    <a class="btn" href="mailto:suporte@marquerafique.com.br">E-mail Suporte</a>
+                    <a class="btn" href="mailto:dev@marquerafique.com.br">E-mail Dev</a>
+                    <a class="btn" href="https://github.com/rafickmattos" target="_blank" rel="noopener noreferrer">
+                        <img class="icon" src="github.png" alt="GitHub" loading="lazy" decoding="async">GitHub
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div>
+                © 2026 Marque Rafique Matos Melo Campos •
+                <a href="privacidade.html">Política de Privacidade</a>
+            </div>
+            <div style="color:var(--muted)">Feito com ♥ no domínio marquerafique.com.br</div>
+        </footer>
     </div>
 
-    <footer>
-        © 2026 Marque Rafique Matos Melo Campos. Todos os direitos reservados.
-    </footer>
+    <script>
+        (function () {
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+            const wrap = document.getElementById('parallax-wrap');
+            if (!wrap) return;
+            const img = wrap.querySelector('.profile-pic');
+            if (!img) return;
+
+            const speed = parseFloat(img.dataset.speed || '0.3');
+            let targetX = 0, targetY = 0;
+            let currentX = 0, currentY = 0;
+            let pointerX = 0, pointerY = 0;
+            let ticking = false;
+
+            function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+            function updateTransform() {
+                ticking = false;
+                const maxTranslate = 26;
+                const translateY = clamp(currentY + currentX * 0.6, -maxTranslate, maxTranslate);
+                const translateX = clamp(targetX * 0.4, -maxTranslate, maxTranslate) * 0.6;
+                img.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) scale(1.03)`;
+            }
+
+            function onScroll() {
+                const rect = wrap.getBoundingClientRect();
+                const centerOffset = (rect.top + rect.height / 2) - (window.innerHeight / 2);
+                targetY = -centerOffset * speed * 0.07;
+                currentY += (targetY - currentY) * 0.12;
+                requestTick();
+            }
+
+            function onPointerMove(e) {
+                const rect = wrap.getBoundingClientRect();
+                const rx = (e.clientX - (rect.left + rect.width / 2)) / rect.width;
+                const ry = (e.clientY - (rect.top + rect.height / 2)) / rect.height;
+                targetX = rx * 40;
+                pointerY = ry * 30;
+                currentX += (pointerY - currentX) * 0.12;
+                requestTick();
+            }
+
+            function requestTick() {
+                if (!ticking) {
+                    ticking = true;
+                    requestAnimationFrame(updateTransform);
+                }
+            }
+
+            onScroll();
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll, { passive: true });
+
+            if (window.PointerEvent) {
+                wrap.addEventListener('pointermove', onPointerMove);
+                wrap.addEventListener('pointerleave', function () {
+                    currentX += (0 - currentX) * 0.18;
+                    requestTick();
+                });
+            } else {
+                wrap.addEventListener('mousemove', onPointerMove);
+                wrap.addEventListener('mouseleave', function () {
+                    currentX += (0 - currentX) * 0.18;
+                    requestTick();
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
