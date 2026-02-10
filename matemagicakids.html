@@ -10,7 +10,6 @@
     <meta property="og:title" content="Matemágica Kids - Aprenda Matemática Brincando">
     <meta property="og:description" content="Junte-se a Helena e Bisteka nessa jornada mágica pelo mundo dos números.">
     <meta property="og:type" content="website">
-    <!-- IMAGEM DE CAPA AQUI -->
     <meta property="og:image" content="capa.png">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -39,7 +38,6 @@
             overflow-x: hidden;
         }
 
-        /* --- Tipografia & Utilitários --- */
         h1, h2, h3, h4 { margin-top: 0; font-weight: 700; }
         h2 { font-size: 2rem; margin-bottom: 2rem; text-align: center; color: white; }
         p { color: var(--muted); margin-bottom: 1rem; }
@@ -50,10 +48,6 @@
             padding: 0 2rem;
         }
 
-        .highlight { color: var(--accent-yellow); font-weight: bold; }
-        .text-center { text-align: center; }
-
-        /* --- Nav --- */
         nav {
             padding: 1rem 2rem;
             display: flex;
@@ -75,16 +69,9 @@
         }
 
         .nav-logo {
-            height: 40px; /* Ajuste a altura conforme necessário para seu logo */
+            height: 40px; 
             width: auto;
             display: block;
-        }
-
-        /* Caso o logo não carregue, mantém o texto como fallback */
-        .brand-text {
-            font-weight: 800;
-            font-size: 1.3rem;
-            display: none; /* Escondido por padrão se tiver logo */
         }
 
         .back-link {
@@ -98,7 +85,6 @@
         }
         .back-link:hover { color: var(--primary); }
 
-        /* --- Hero Section --- */
         .hero {
             padding: 5rem 0;
             display: flex;
@@ -108,7 +94,6 @@
             overflow: hidden;
         }
         
-        /* Background decorative elements */
         .hero::before {
             content: '';
             position: absolute;
@@ -143,7 +128,7 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             animation: float 6s ease-in-out infinite;
             border: 4px solid rgba(255,255,255,0.1);
-            object-fit: cover; /* Garante que a imagem preencha bem */
+            object-fit: cover;
         }
 
         @keyframes float {
@@ -152,7 +137,6 @@
             100% { transform: translateY(0px); }
         }
 
-        /* --- Buttons --- */
         .btn-download {
             background: linear-gradient(135deg, var(--primary), #4f46e5);
             color: white;
@@ -171,9 +155,7 @@
             transform: translateY(-4px);
             box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
         }
-        .btn-small { padding: 8px 16px; font-size: 0.9rem; }
 
-        /* --- Section: O Mundo --- */
         .section-world {
             background: rgba(255,255,255,0.02);
             padding: 4rem 0;
@@ -209,7 +191,6 @@
         .world-list li:last-child { border-bottom: none; }
         .world-list i { color: var(--primary); margin-top: 5px; font-size: 0.8rem; }
 
-        /* --- Section: Personagens --- */
         .section-chars { padding: 4rem 0; }
         
         .char-grid {
@@ -231,7 +212,6 @@
         }
         .char-card:hover { transform: translateY(-5px); border-color: var(--accent-purple); }
 
-        /* Atualizado para suportar imagens PNG */
         .char-img {
             width: 100px; height: 100px;
             object-fit: contain;
@@ -247,7 +227,6 @@
         .char-name { font-weight: 700; color: white; margin-bottom: 0.5rem; display: block; font-size: 1.1rem; }
         .char-desc { font-size: 0.85rem; line-height: 1.4; }
 
-        /* --- Section: Recursos --- */
         .section-features {
             padding: 4rem 0;
             background: linear-gradient(to bottom, var(--bg), #131c31);
@@ -277,7 +256,6 @@
         .f-content h4 { margin: 0 0 0.2rem 0; font-size: 1.1rem; color: white; }
         .f-content p { margin: 0; font-size: 0.9rem; }
 
-        /* --- Section: Parents & CTA --- */
         .section-parents {
             background: var(--card);
             padding: 3rem;
@@ -326,24 +304,15 @@
 </head>
 <body>
 
-    <!-- Navegação -->
     <nav>
         <a href="index.html" class="back-link">
             <i class="fas fa-arrow-left"></i> Voltar ao Portfólio
         </a>
         <a href="#" class="brand">
-            <!-- LOGO AQUI -->
-            <img src="logo_2.png" alt="Matemágica Kids Logo" class="nav-logo" onerror="this.style.display='none'; document.getElementById('fallback-brand').style.display='block'">
-            
-            <!-- Texto fallback caso a imagem não carregue -->
-            <span id="fallback-brand" class="brand-text">
-                <span style="color:var(--accent-pink)">Matemágica</span>
-                <span style="color:var(--accent-yellow)">Kids</span>
-            </span>
+            <img src="logo_2.png" alt="Matemágica Kids Logo" class="nav-logo">
         </a>
     </nav>
 
-    <!-- Hero Section -->
     <div class="container">
         <header class="hero">
             <div class="hero-text">
@@ -360,19 +329,16 @@
                 </div>
             </div>
             <div>
-                <!-- ÍCONE DO APP AQUI -->
                 <img src="ic_app.png" alt="Ícone Matemágica Kids" class="app-icon">
             </div>
         </header>
     </div>
 
-    <!-- O Mundo de Matemágica -->
     <section class="section-world">
         <div class="container">
             <h2>O Mundo de Matemágica</h2>
             <div class="world-grid">
                 
-                <!-- Card 1 -->
                 <article class="world-card">
                     <h3><i class="fas fa-dungeon"></i> Escola de Magia</h3>
                     <ul class="world-list">
@@ -383,7 +349,6 @@
                     </ul>
                 </article>
 
-                <!-- Card 2 -->
                 <article class="world-card">
                     <h3><i class="fas fa-shield-alt"></i> Modos de Aventura</h3>
                     <ul class="world-list">
@@ -394,7 +359,6 @@
                     </ul>
                 </article>
 
-                <!-- Card 3 -->
                 <article class="world-card">
                     <h3><i class="fas fa-book-open"></i> Cursos do Grimório</h3>
                     <ul class="world-list">
@@ -408,7 +372,6 @@
         </div>
     </section>
 
-    <!-- Personagens -->
     <section class="section-chars">
         <div class="container">
             <h2>Personagens Inesquecíveis</h2>
@@ -466,7 +429,6 @@
         </div>
     </section>
 
-    <!-- Recursos que Encantam -->
     <section class="section-features">
         <div class="container">
             <h2 style="margin-bottom:3rem">Recursos que Encantam</h2>
@@ -524,7 +486,6 @@
         </div>
     </section>
 
-    <!-- Área dos Pais e CTA Final -->
     <div class="container">
         <section class="section-parents">
             <h2 style="color:var(--primary)">O que os Pais Vão Adorar</h2>
@@ -545,7 +506,6 @@
             </div>
         </section>
 
-        <!-- Informações Técnicas (Footer) -->
         <footer class="tech-info">
             <p>
                 <strong>Informações Técnicas:</strong><br>
@@ -553,7 +513,9 @@
                 Pacote: com.marquerafique.matemgicakids • Desenvolvedor: Marque Rafique
             </p>
             <p style="margin-top:1rem">
-                © 2026 Matemágica Kids • <a href="privacidade.html" style="color:var(--primary)">Política de Privacidade</a>
+                © 2026 Matemágica Kids • 
+                <a href="privacidade.html" style="color:var(--primary)">Privacidade</a> • 
+                <a href="termos.html" style="color:var(--primary)">Termos de Uso</a>
             </p>
         </footer>
     </div>
