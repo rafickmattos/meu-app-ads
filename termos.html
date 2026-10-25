@@ -1,254 +1,207 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Termos de Uso | Marque Rafique</title>
-    <meta name="robots" content="noindex">
+    <meta name="description" content="Termos de Uso dos apps Matemágica Kids e Ovelhinhas da Fé, de Marque Rafique: licença, compras, assinatura, anúncios e responsabilidades.">
+    <link rel="canonical" href="https://www.marquerafique.com.br/termos.html">
+    <link rel="icon" href="logo_1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #2563eb;
-            --bg: #0f172a;
-            --card: #1e293b;
-            --text: #e2e8f0;
-            --muted: #94a3b8;
-            --border: rgba(255,255,255,0.1);
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 900px;
-            background: var(--card);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            border: 1px solid var(--border);
-        }
-
-        /* Header & Toggle */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .back-link {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: color 0.2s;
-        }
-        .back-link:hover { color: var(--primary); }
-
-        .lang-toggle {
-            display: flex;
-            background: rgba(0,0,0,0.3);
-            border-radius: 8px;
-            padding: 4px;
-        }
-
-        .lang-btn {
-            background: none;
-            border: none;
-            color: var(--muted);
-            padding: 8px 16px;
-            cursor: pointer;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-        }
-
-        .lang-btn.active {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 2px 10px rgba(37,99,235,0.3);
-        }
-
-        /* Typography */
-        h1 { color: white; margin-top: 0; font-size: 1.8rem; }
-        h2 { color: var(--primary); font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; border-left: 3px solid var(--primary); padding-left: 10px; }
-        h3 { color: var(--text); font-size: 1.1rem; margin-top: 1.5rem; }
-        
-        p, ul { margin-bottom: 1rem; color: var(--muted); }
-        li { margin-bottom: 0.5rem; }
-        
-        a { color: var(--primary); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        .highlight-box {
-            background: rgba(234, 179, 8, 0.1);
-            border: 1px solid rgba(234, 179, 8, 0.3);
-            color: #eab308;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            font-size: 0.95rem;
-        }
-
-        .footer-links {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        /* Language Sections */
-        .content-section { display: none; animation: fadeIn 0.3s ease; }
-        .content-section.active { display: block; }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo / Skip to content</a>
 
-    <div class="container">
-        <div class="header">
-            <a href="matemagicakids.html" class="back-link">
-                <i class="fas fa-arrow-left"></i> Voltar / Back
+    <header class="topbar">
+        <div class="container">
+            <a class="brand" href="index.html">
+                <img src="logo_1.png" alt="" width="44" height="44">
+                <span><strong>Marque Rafique</strong><small>Apps educativos</small></span>
             </a>
-            
-            <div class="lang-toggle">
-                <button class="lang-btn" onclick="setLang('en')">English</button>
-                <button class="lang-btn active" onclick="setLang('pt')">Português</button>
-            </div>
+            <nav class="nav-links" aria-label="Principal">
+                <a href="matemagicakids.html">Matemágica Kids</a>
+                <a href="ovelhinhasdafe.html">Ovelhinhas da Fé</a>
+                <a href="privacidade.html">Privacidade</a>
+                <a href="termos.html" aria-current="page">Termos</a>
+            </nav>
         </div>
-        
-        <!-- CONTEÚDO EM PORTUGUÊS -->
-        <div id="content-pt" class="content-section active">
-            <h1>Termos de Uso e Condições</h1>
-            <p><strong>Última atualização:</strong> 10 de Fevereiro de 2026</p>
+    </header>
 
-            <p>Bem-vindo ao aplicativo <strong>Matemágica Kids</strong> ("Aplicativo"), desenvolvido por <strong>Marque Rafique</strong> ("Nós"). Ao baixar ou usar o aplicativo, estes termos se aplicam automaticamente a você – portanto, leia-os com atenção antes de usar o serviço.</p>
-
-            <h2>1. Licença de Uso</h2>
-            <p>O aplicativo, incluindo todos os personagens (Helena, Bisteka, etc.), design, música e código, é propriedade intelectual de Marque Rafique. Concedemos a você uma licença pessoal, não exclusiva, intransferível e revogável para usar o aplicativo para fins pessoais e não comerciais.</p>
-            <p>Você não tem permissão para copiar, modificar, tentar extrair o código-fonte (engenharia reversa) ou criar versões derivadas do aplicativo.</p>
-
-            <h2>2. Compras no Aplicativo (In-App Purchases)</h2>
-            <p>O aplicativo pode oferecer produtos virtuais para compra, como a "Versão Premium" (remoção de anúncios) ou itens cosméticos.</p>
-            
-            <div class="highlight-box">
-                <i class="fas fa-info-circle"></i> <strong>Importante:</strong> Todas as transações financeiras são processadas e gerenciadas diretamente pela <strong>Google Play Store</strong>. Nós não armazenamos seus dados de cartão de crédito ou bancários.
+    <main id="conteudo" class="container legal">
+        <div class="legal-card">
+            <div class="legal-toolbar">
+                <a href="index.html" class="tag" style="text-decoration:none"><i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar / Back</a>
+                <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+                    <button type="button" data-lang="pt" aria-pressed="true">Português</button>
+                    <button type="button" data-lang="en" aria-pressed="false">English</button>
+                </div>
             </div>
 
-            <ul>
-                <li><strong>Pagamento:</strong> O pagamento será cobrado na sua conta Google Play na confirmação da compra.</li>
-                <li><strong>Reembolsos:</strong> Como desenvolvedores, não processamos reembolsos diretamente. Todas as solicitações de reembolso estão sujeitas às políticas de reembolso da Google Play Store.</li>
-                <li><strong>Responsabilidade dos Pais:</strong> Se o usuário for menor de idade, garantimos que o aplicativo possui barreiras parentais (Parental Gate) para compras, mas é responsabilidade dos pais ou responsáveis monitorar o uso do dispositivo para evitar compras acidentais.</li>
-            </ul>
+            <!-- ===================== PORTUGUÊS ===================== -->
+            <article id="lang-pt" class="lang-section" lang="pt-BR">
+                <h1>Termos de Uso</h1>
+                <p class="meta">Última atualização: 25 de outubro de 2026</p>
 
-            <h2>3. Conteúdo e Conduta</h2>
-            <p>O aplicativo é destinado ao público infantil e familiar. Comprometemo-nos a não exibir conteúdo impróprio. No entanto, o aplicativo é fornecido "como está" e não garantimos que esteja livre de erros ou interrupções.</p>
+                <p>
+                    Estes termos valem para os aplicativos <strong>Matemágica Kids</strong> e <strong>Ovelhinhas da Fé</strong>
+                    (os "Aplicativos"), desenvolvidos por <strong>Marque Rafique</strong> ("nós"). Ao baixar ou usar os Aplicativos,
+                    você concorda com estes termos. Como os Aplicativos são feitos para crianças, estes termos devem ser lidos e
+                    aceitos pelos <strong>pais ou responsáveis</strong>.
+                </p>
 
-            <h2>4. Anúncios</h2>
-            <p>A versão gratuita do aplicativo exibe anúncios fornecidos por redes de terceiros (como Google AdMob). Nos esforçamos para filtrar categorias sensíveis para garantir que sejam adequados para crianças. Ao adquirir a versão "Premium", os anúncios intersticiais e banners são removidos.</p>
+                <h2>1. Licença de uso</h2>
+                <p>Os Aplicativos, incluindo personagens, histórias, ilustrações, músicas, textos e código, são propriedade intelectual de Marque Rafique. Concedemos uma licença pessoal, não exclusiva, intransferível e revogável para usá-los para fins pessoais e não comerciais, em aparelhos que você possui ou controla.</p>
+                <p>Não é permitido copiar, modificar, distribuir, vender, fazer engenharia reversa ou criar versões derivadas dos Aplicativos ou do seu conteúdo.</p>
 
-            <h2>5. Isenção de Garantias</h2>
-            <p>O aplicativo é fornecido sem garantias de qualquer tipo. Não nos responsabilizamos por quaisquer danos ao seu dispositivo ou perda de dados que resultem do uso do aplicativo.</p>
+                <h2>2. Contas</h2>
+                <ul>
+                    <li>Os dois Aplicativos podem ser usados sem conta. Criar ou ligar uma conta (Google, ou e-mail e senha no Ovelhinhas da Fé) é opcional e deve ser feito por um adulto.</li>
+                    <li>O responsável deve manter a senha em segurança e nos avisar se suspeitar de uso indevido.</li>
+                    <li>A conta pode ser excluída a qualquer momento, como explicado na <a href="privacidade.html">Política de Privacidade</a>.</li>
+                </ul>
 
-            <h2>6. Alterações nos Termos</h2>
-            <p>Podemos atualizar nossos Termos e Condições periodicamente. Assim, aconselhamos que você revise esta página periodicamente. Notificaremos você sobre quaisquer alterações publicando os novos Termos nesta página.</p>
+                <h2>3. Compras e assinatura</h2>
+                <div class="note"><p><i class="fas fa-circle-info" aria-hidden="true"></i> <strong>Importante:</strong> todos os pagamentos são processados pela <strong>Google Play</strong>. Não recebemos nem guardamos dados de cartão ou bancários. As áreas de compra ficam atrás de um portão para adultos.</p></div>
 
-            <h2>7. Contato</h2>
-            <p>Se você tiver dúvidas ou sugestões sobre nossos Termos de Uso, não hesite em nos contatar em:</p>
-            <a href="mailto:suporte@marquerafique.com.br" style="font-size: 1.1rem; font-weight: bold;">suporte@marquerafique.com.br</a>
-            
-            <div class="footer-links">
-                <a href="privacidade.html">Política de Privacidade</a> | <a href="index.html">Portfólio do Desenvolvedor</a>
-            </div>
+                <h3>Matemágica Kids: compras avulsas</h3>
+                <ul>
+                    <li>Oferece itens opcionais, como a versão <strong>Premium</strong> (sem anúncios) e pacotes de moedas e gemas do jogo.</li>
+                    <li>Moedas, gemas e outros itens virtuais só podem ser usados dentro do app, não têm valor em dinheiro e não podem ser trocados ou transferidos.</li>
+                </ul>
+
+                <h3>Ovelhinhas da Fé: assinatura Premium</h3>
+                <ul>
+                    <li>A assinatura <strong>Ovelhinhas Premium</strong> libera as histórias Premium e tem plano <strong>mensal</strong> ou <strong>anual</strong>. O preço aparece na tela antes da confirmação.</li>
+                    <li>A cobrança é feita na conta Google Play ao confirmar, e a assinatura <strong>renova automaticamente</strong> no fim de cada período, até ser cancelada.</li>
+                    <li>Para cancelar, abra a Google Play &gt; Perfil &gt; <em>Pagamentos e assinaturas</em> &gt; <em>Assinaturas</em>. O cancelamento vale para o próximo período, e o Premium continua até o fim do período já pago.</li>
+                    <li>Se houver período de teste grátis, ele aparece na tela de assinatura. Sem cancelamento antes do fim do teste, a cobrança começa automaticamente.</li>
+                </ul>
+
+                <h3>Reembolsos</h3>
+                <p>Os reembolsos seguem as <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">regras de reembolso da Google Play</a>. Se tiver algum problema com uma compra, escreva para o suporte e vamos ajudar. Isso não afeta os direitos previstos no Código de Defesa do Consumidor.</p>
+                <p>Os pais devem acompanhar o uso do aparelho e podem ativar a autenticação para compras na própria Google Play, para evitar compras sem querer.</p>
+
+                <h2>4. Anúncios</h2>
+                <p>A versão gratuita do <strong>Matemágica Kids</strong> mostra anúncios do Google AdMob, configurados para público infantil (classificação "G", Livre) e sem personalização. A versão Premium remove os anúncios. O <strong>Ovelhinhas da Fé não tem anúncios</strong>.</p>
+
+                <h2>5. Conteúdo</h2>
+                <ul>
+                    <li>O Matemágica Kids tem conteúdo educativo de matemática. O Ovelhinhas da Fé tem conteúdo cristão baseado em histórias da Bíblia, adaptado para crianças.</li>
+                    <li>Nos esforçamos para que o conteúdo seja correto e adequado às crianças, mas ele não substitui a escola, a família ou a orientação religiosa.</li>
+                    <li>Os modos online do Matemágica Kids usam apelidos gerados pelo app e não têm chat. Não é permitido tentar burlar o jogo, o ranking ou os sistemas de segurança.</li>
+                    <li>O conteúdo dos Aplicativos pode mudar com o tempo: histórias, minigames e itens podem ser adicionados, alterados ou removidos.</li>
+                </ul>
+
+                <h2>6. Internet e disponibilidade</h2>
+                <p>Algumas funções precisam de internet (contas, nuvem, modo online, novas histórias e compras), e o uso de dados móveis pode gerar custos da sua operadora. Fazemos o possível para manter os Aplicativos funcionando, mas não garantimos que fiquem sempre disponíveis ou sem erros.</p>
+
+                <h2>7. Limitação de responsabilidade</h2>
+                <p>Os Aplicativos são fornecidos "no estado em que se encontram". Na medida permitida pela lei, não nos responsabilizamos por danos indiretos, perda de dados não salvos na nuvem ou problemas causados pelo aparelho, pela conexão ou por serviços de terceiros. Nada nestes termos limita os direitos do consumidor que a lei não permite limitar.</p>
+
+                <h2>8. Mudanças nos termos</h2>
+                <p>Podemos atualizar estes termos. A versão nova fica publicada nesta página com a data atualizada. Se a mudança for importante, avisaremos também dentro dos Aplicativos.</p>
+
+                <h2>9. Lei aplicável</h2>
+                <p>Estes termos seguem as leis do Brasil, incluindo o Código de Defesa do Consumidor e a LGPD.</p>
+
+                <div class="contact-box">
+                    <h3 style="margin-top:0">Fale conosco</h3>
+                    <p>Dúvidas sobre estes termos, compras ou assinaturas:</p>
+                    <a href="mailto:suporte@marquerafique.com.br" style="font-weight:800; font-size:1.1rem">suporte@marquerafique.com.br</a>
+                </div>
+            </article>
+
+            <!-- ===================== ENGLISH ===================== -->
+            <article id="lang-en" class="lang-section" lang="en" hidden>
+                <h1>Terms of Use</h1>
+                <p class="meta">Last updated: October 25, 2026</p>
+
+                <p>
+                    These terms apply to the <strong>Matemágica Kids</strong> and <strong>Ovelhinhas da Fé</strong> apps
+                    (the "Apps"), developed by <strong>Marque Rafique</strong> ("we"). By downloading or using the Apps, you agree
+                    to these terms. Because the Apps are made for children, these terms should be read and accepted by
+                    <strong>parents or guardians</strong>.
+                </p>
+
+                <h2>1. License</h2>
+                <p>The Apps, including characters, stories, illustrations, music, text and code, are the intellectual property of Marque Rafique. We grant you a personal, non-exclusive, non-transferable, revocable license to use them for personal, non-commercial purposes on devices you own or control.</p>
+                <p>You may not copy, modify, distribute, sell, reverse engineer or create derivative versions of the Apps or their content.</p>
+
+                <h2>2. Accounts</h2>
+                <ul>
+                    <li>Both Apps can be used without an account. Creating or linking an account (Google, or email and password in Ovelhinhas da Fé) is optional and must be done by an adult.</li>
+                    <li>The parent must keep the password safe and tell us if they suspect misuse.</li>
+                    <li>The account can be deleted at any time, as explained in the <a href="privacidade.html?lang=en">Privacy Policy</a>.</li>
+                </ul>
+
+                <h2>3. Purchases and subscription</h2>
+                <div class="note"><p><i class="fas fa-circle-info" aria-hidden="true"></i> <strong>Important:</strong> all payments are processed by <strong>Google Play</strong>. We never receive or store card or banking details. Purchase areas are behind an adult gate.</p></div>
+
+                <h3>Matemágica Kids: one-time purchases</h3>
+                <ul>
+                    <li>Offers optional items, such as the <strong>Premium</strong> version (no ads) and packs of in-game coins and gems.</li>
+                    <li>Coins, gems and other virtual items can only be used inside the app, have no cash value and cannot be exchanged or transferred.</li>
+                </ul>
+
+                <h3>Ovelhinhas da Fé: Premium subscription</h3>
+                <ul>
+                    <li>The <strong>Ovelhinhas Premium</strong> subscription unlocks Premium stories, with a <strong>monthly</strong> or <strong>yearly</strong> plan. The price is shown on screen before you confirm.</li>
+                    <li>Payment is charged to your Google Play account at confirmation, and the subscription <strong>renews automatically</strong> at the end of each period until cancelled.</li>
+                    <li>To cancel, open Google Play &gt; Profile &gt; <em>Payments &amp; subscriptions</em> &gt; <em>Subscriptions</em>. Cancellation applies to the next period, and Premium stays active until the end of the period already paid.</li>
+                    <li>If a free trial is offered, it is shown on the subscription screen. If you do not cancel before the trial ends, billing starts automatically.</li>
+                </ul>
+
+                <h3>Refunds</h3>
+                <p>Refunds follow the <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Google Play refund policies</a>. If you have a problem with a purchase, write to support and we will help. This does not affect your statutory consumer rights.</p>
+                <p>Parents should supervise device use and can turn on purchase authentication in Google Play to avoid accidental purchases.</p>
+
+                <h2>4. Ads</h2>
+                <p>The free version of <strong>Matemágica Kids</strong> shows Google AdMob ads, configured for children ("G" rating, general audiences) and not personalized. Premium removes the ads. <strong>Ovelhinhas da Fé has no ads</strong>.</p>
+
+                <h2>5. Content</h2>
+                <ul>
+                    <li>Matemágica Kids has educational math content. Ovelhinhas da Fé has Christian content based on Bible stories, adapted for children.</li>
+                    <li>We work to keep the content accurate and suitable for children, but it does not replace school, family or religious guidance.</li>
+                    <li>The online modes in Matemágica Kids use nicknames generated by the app and have no chat. Attempts to cheat the game, the leaderboard or the security systems are not allowed.</li>
+                    <li>Content may change over time: stories, minigames and items may be added, changed or removed.</li>
+                </ul>
+
+                <h2>6. Internet and availability</h2>
+                <p>Some features need internet (accounts, cloud backup, online mode, new stories and purchases), and mobile data may cost money with your carrier. We do our best to keep the Apps running, but we cannot guarantee they will always be available or error-free.</p>
+
+                <h2>7. Limitation of liability</h2>
+                <p>The Apps are provided "as is". To the extent permitted by law, we are not liable for indirect damages, loss of data not backed up to the cloud, or problems caused by the device, the connection or third-party services. Nothing in these terms limits consumer rights that cannot be limited by law.</p>
+
+                <h2>8. Changes to these terms</h2>
+                <p>We may update these terms. The new version is published on this page with the updated date. If a change is significant, we will also let you know inside the Apps.</p>
+
+                <h2>9. Governing law</h2>
+                <p>These terms are governed by the laws of Brazil, including the Consumer Protection Code and the LGPD.</p>
+
+                <div class="contact-box">
+                    <h3 style="margin-top:0">Contact us</h3>
+                    <p>Questions about these terms, purchases or subscriptions:</p>
+                    <a href="mailto:suporte@marquerafique.com.br" style="font-weight:800; font-size:1.1rem">suporte@marquerafique.com.br</a>
+                </div>
+            </article>
         </div>
+    </main>
 
-        <!-- ENGLISH CONTENT -->
-        <div id="content-en" class="content-section">
-            <h1>Terms and Conditions of Use</h1>
-            <p><strong>Last Updated:</strong> February 10, 2026</p>
-
-            <p>Welcome to the <strong>Matemágica Kids</strong> application ("App"), developed by <strong>Marque Rafique</strong> ("We"). By downloading or using the app, these terms automatically apply to you – you should make sure therefore that you read them carefully before using the app.</p>
-
-            <h2>1. License</h2>
-            <p>The app, including all characters (Helena, Bisteka, etc.), design, music, and code, is the intellectual property of Marque Rafique. We grant you a personal, non-exclusive, non-transferable, revocable license to use the app for personal, non-commercial purposes.</p>
-            <p>You are not allowed to copy, modify, attempt to extract the source code (reverse engineering), or create derivative versions of the app.</p>
-
-            <h2>2. In-App Purchases</h2>
-            <p>The app may offer virtual goods for purchase, such as a "Premium Version" (ad removal) or cosmetic items.</p>
-            
-            <div class="highlight-box">
-                <i class="fas fa-info-circle"></i> <strong>Important:</strong> All financial transactions are processed and managed directly by the <strong>Google Play Store</strong>. We do not store your credit card or banking information.
-            </div>
-
-            <ul>
-                <li><strong>Payment:</strong> Payment will be charged to your Google Play account at confirmation of purchase.</li>
-                <li><strong>Refunds:</strong> As developers, we do not process refunds directly. All refund requests are subject to the Google Play Store refund policies.</li>
-                <li><strong>Parental Responsibility:</strong> If the user is a minor, we ensure the app has Parental Gates for purchases, but it is the responsibility of parents or guardians to monitor device usage to prevent accidental purchases.</li>
-            </ul>
-
-            <h2>3. Content and Conduct</h2>
-            <p>The app is intended for children and families. We are committed to avoiding inappropriate content. However, the app is provided "as is" and we do not guarantee that it will be free from errors or interruptions.</p>
-
-            <h2>4. Ads</h2>
-            <p>The free version of the app displays ads provided by third-party networks (such as Google AdMob). We strive to filter sensitive categories to ensure they are appropriate for children. By purchasing the "Premium" version, interstitial and banner ads are removed.</p>
-
-            <h2>5. Disclaimer of Warranties</h2>
-            <p>The app is provided without warranties of any kind. We are not responsible for any damage to your device or loss of data resulting from the use of the app.</p>
-
-            <h2>6. Changes to Terms</h2>
-            <p>We may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Terms on this page.</p>
-
-            <h2>7. Contact Us</h2>
-            <p>If you have any questions or suggestions about our Terms and Conditions, do not hesitate to contact us at:</p>
-            <a href="mailto:suporte@marquerafique.com.br" style="font-size: 1.1rem; font-weight: bold;">suporte@marquerafique.com.br</a>
-            
-            <div class="footer-links">
-                <a href="privacidade.html">Privacy Policy</a> | <a href="index.html">Developer Portfolio</a>
-            </div>
+    <footer class="site-footer">
+        <div class="container">
+            <span>© 2026 Marque Rafique</span>
+            <nav aria-label="Rodapé">
+                <a href="index.html">Início</a>
+                <a href="privacidade.html">Política de Privacidade</a>
+                <a href="mailto:suporte@marquerafique.com.br">Suporte</a>
+            </nav>
         </div>
+    </footer>
 
-    </div>
-
-    <script>
-        function setLang(lang) {
-            // Hide all contents
-            document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
-            // Remove active class from buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-
-            // Show selected content
-            document.getElementById('content-' + lang).classList.add('active');
-            
-            // Set button active state
-            const buttons = document.querySelectorAll('.lang-btn');
-            if (lang === 'en') buttons[0].classList.add('active');
-            else buttons[1].classList.add('active');
-
-            // Update html lang attribute
-            document.documentElement.lang = lang === 'en' ? 'en' : 'pt-br';
-        }
-    </script>
+    <script src="idioma.js"></script>
 </body>
 </html>
-```

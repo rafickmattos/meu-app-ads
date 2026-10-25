@@ -1,292 +1,319 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Privacy Policy | Marque Rafique</title>
-    <meta name="robots" content="noindex">
+    <title>Política de Privacidade | Marque Rafique</title>
+    <meta name="description" content="Política de Privacidade dos apps Matemágica Kids e Ovelhinhas da Fé, de Marque Rafique: quais dados são usados, por quê, e como os pais podem consultar ou apagar.">
+    <link rel="canonical" href="https://www.marquerafique.com.br/privacidade.html">
+    <link rel="icon" href="logo_1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #2563eb;
-            --bg: #0f172a;
-            --card: #1e293b;
-            --text: #e2e8f0;
-            --muted: #94a3b8;
-            --border: rgba(255,255,255,0.1);
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 800px;
-            background: var(--card);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            border: 1px solid var(--border);
-        }
-
-        /* Header & Toggle */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .back-link {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: color 0.2s;
-        }
-        .back-link:hover { color: var(--primary); }
-
-        .lang-toggle {
-            display: flex;
-            background: rgba(0,0,0,0.3);
-            border-radius: 8px;
-            padding: 4px;
-        }
-
-        .lang-btn {
-            background: none;
-            border: none;
-            color: var(--muted);
-            padding: 8px 16px;
-            cursor: pointer;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-        }
-
-        .lang-btn.active {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 2px 10px rgba(37,99,235,0.3);
-        }
-
-        h1 { color: white; margin-top: 0; font-size: 1.8rem; }
-        h2 { color: var(--primary); font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; }
-        h3 { color: var(--text); font-size: 1.1rem; margin-top: 1.5rem; }
-        
-        p, ul { margin-bottom: 1rem; color: var(--muted); }
-        li { margin-bottom: 0.5rem; }
-        
-        a { color: var(--primary); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        .contact-box {
-            background: rgba(37, 99, 235, 0.08);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(37, 99, 235, 0.2);
-            margin-top: 30px;
-        }
-
-        .content-section { display: none; animation: fadeIn 0.3s ease; }
-        .content-section.active { display: block; }
-
-        .footer-links {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 600px) {
-            .container { padding: 20px; }
-            .header { flex-direction: column; align-items: flex-start; }
-        }
-    </style>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo / Skip to content</a>
 
-    <div class="container">
-        <div class="header">
-            <a href="index.html" class="back-link">
-                <i class="fas fa-arrow-left"></i> Voltar / Back
+    <header class="topbar">
+        <div class="container">
+            <a class="brand" href="index.html">
+                <img src="logo_1.png" alt="" width="44" height="44">
+                <span><strong>Marque Rafique</strong><small>Apps educativos</small></span>
             </a>
-            
-            <div class="lang-toggle">
-                <button class="lang-btn active" onclick="setLang('en')">English</button>
-                <button class="lang-btn" onclick="setLang('pt')">Português</button>
-            </div>
+            <nav class="nav-links" aria-label="Principal">
+                <a href="matemagicakids.html">Matemágica Kids</a>
+                <a href="ovelhinhasdafe.html">Ovelhinhas da Fé</a>
+                <a href="privacidade.html" aria-current="page">Privacidade</a>
+                <a href="termos.html">Termos</a>
+            </nav>
         </div>
-        
-        <!-- ENGLISH CONTENT -->
-        <div id="content-en" class="content-section active">
-            <h1>Privacy Policy</h1>
-            <p><strong>Effective Date:</strong> February 10, 2026</p>
+    </header>
 
-            <p>This privacy policy applies to the <strong>Matemágica Kids app</strong> (hereby referred to as "Application") for mobile devices that was created by <strong>Marque Rafique</strong> (hereby referred to as "Service Provider") as an Ad Supported service. This service is intended for use "AS IS".</p>
-
-            <h2>Information Collection and Use</h2>
-            <p>The Application collects information when you download and use it. This information may include information such as:</p>
-            <ul>
-                <li>Your device's Internet Protocol address (e.g. IP address)</li>
-                <li>The pages of the Application that you visit, the time and date of your visit, the time spent on those pages</li>
-                <li>The time spent on the Application</li>
-                <li>The operating system you use on your mobile device</li>
-            </ul>
-            <p>The Application does not gather precise information about the location of your mobile device.</p>
-            <p>The Service Provider may use the information you provided to contact you from time to time to provide you with important information, required notices and marketing promotions.</p>
-            <p>For a better experience, while using the Application, the Service Provider may require you to provide us with certain personally identifiable information, including but not limited to Name. The information that the Service Provider request will be retained by them and used as described in this privacy policy.</p>
-
-            <h2>Third Party Access</h2>
-            <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways that are described in this privacy statement.</p>
-            <p>Please note that the Application utilizes third-party services that have their own Privacy Policy about handling data. Below are the links to the Privacy Policy of the third-party service providers used by the Application:</p>
-            <ul>
-                <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
-                <li><a href="https://support.google.com/admob/answer/6128543?hl=pt-PT" target="_blank">AdMob</a></li>
-            </ul>
-
-            <p>The Service Provider may disclose User Provided and Automatically Collected Information:</p>
-            <ul>
-                <li>as required by law, such as to comply with a subpoena, or similar legal process;</li>
-                <li>when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;</li>
-                <li>with their trusted services providers who work on their behalf, do not have an independent use of the information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.</li>
-            </ul>
-
-            <h2>Opt-Out Rights</h2>
-            <p>You can stop all collection of information by the Application easily by uninstalling it. You may use the standard uninstall processes as may be available as part of your mobile device or via the mobile application marketplace or network.</p>
-
-            <h2>Data Retention Policy</h2>
-            <p>The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. If you'd like them to delete User Provided Data that you have provided via the Application, please contact them at <a href="mailto:dev@marquerafique.com.br">dev@marquerafique.com.br</a> and they will respond in a reasonable time.</p>
-
-            <h2>Children</h2>
-            <p>The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13.</p>
-            <p>The Application does not address anyone under the age of 13. The Service Provider does not knowingly collect personally identifiable information from children under 13 years of age. In the case the Service Provider discover that a child under 13 has provided personal information, the Service Provider will immediately delete this from their servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact the Service Provider so that they will be able to take the necessary actions.</p>
-
-            <h2>Security</h2>
-            <p>The Service Provider is concerned about safeguarding the confidentiality of your information. The Service Provider provides physical, electronic, and procedural safeguards to protect information the Service Provider processes and maintains.</p>
-
-            <h2>Changes</h2>
-            <p>This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.</p>
-
-            <h2>Your Consent</h2>
-            <p>By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.</p>
-
-            <div class="contact-box">
-                <h3>Contact Us</h3>
-                <p>If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at:</p>
-                <a href="mailto:dev@marquerafique.com.br" style="font-size: 1.1rem; font-weight: bold;">dev@marquerafique.com.br</a>
+    <main id="conteudo" class="container legal">
+        <div class="legal-card">
+            <div class="legal-toolbar">
+                <a href="index.html" class="tag" style="text-decoration:none"><i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar / Back</a>
+                <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+                    <button type="button" data-lang="pt" aria-pressed="true">Português</button>
+                    <button type="button" data-lang="en" aria-pressed="false">English</button>
+                </div>
             </div>
 
-            <div class="footer-links">
-                <a href="termos.html">Terms of Use</a> | <a href="index.html">Developer Portfolio</a>
-            </div>
+            <!-- ===================== PORTUGUÊS ===================== -->
+            <article id="lang-pt" class="lang-section" lang="pt-BR">
+                <h1>Política de Privacidade</h1>
+                <p class="meta">Última atualização: 25 de outubro de 2026</p>
+
+                <p>
+                    Esta política explica como os aplicativos <strong>Matemágica Kids</strong> e <strong>Ovelhinhas da Fé</strong>
+                    (os "Aplicativos"), criados por <strong>Marque Rafique</strong> ("nós"), tratam as informações das
+                    crianças e das famílias que os usam. Os Aplicativos são feitos para o público infantil e seguem a
+                    <strong>Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018)</strong>, a <strong>COPPA</strong>
+                    (lei norte-americana de privacidade infantil) e a <strong>Política para Famílias do Google Play</strong>.
+                </p>
+
+                <div class="note"><p><i class="fas fa-shield-heart" aria-hidden="true"></i> <strong>Resumo para os pais:</strong> usamos o mínimo de dados para o app funcionar. Não pedimos localização, contatos, fotos, câmera ou microfone. Não vendemos dados. Não há chat. Compras, links externos e configurações de conta ficam atrás de um portão para adultos. Você pode pedir para ver ou apagar os dados a qualquer momento.</p></div>
+
+                <nav class="toc" aria-label="Índice">
+                    <strong>Nesta página</strong>
+                    <ol>
+                        <li><a href="#pt-quem">Quem é o responsável</a></li>
+                        <li><a href="#pt-mk">Dados no Matemágica Kids</a></li>
+                        <li><a href="#pt-ov">Dados no Ovelhinhas da Fé</a></li>
+                        <li><a href="#pt-nao">O que nunca coletamos</a></li>
+                        <li><a href="#pt-terceiros">Serviços de terceiros</a></li>
+                        <li><a href="#pt-criancas">Crianças e consentimento dos pais</a></li>
+                        <li><a href="#pt-guarda">Por quanto tempo guardamos</a></li>
+                        <li><a href="#pt-direitos">Seus direitos e como apagar</a></li>
+                        <li><a href="#pt-seguranca">Segurança</a></li>
+                        <li><a href="#pt-mudancas">Mudanças e contato</a></li>
+                    </ol>
+                </nav>
+
+                <h2 id="pt-quem">1. Quem é o responsável pelos dados</h2>
+                <p>O controlador dos dados é <strong>Marque Rafique</strong>, desenvolvedor dos Aplicativos. Para qualquer assunto de privacidade, escreva para <a href="mailto:dev@marquerafique.com.br">dev@marquerafique.com.br</a>.</p>
+
+                <h2 id="pt-mk">2. Dados no Matemágica Kids</h2>
+                <div class="app-box">
+                    <h3><img src="ic_app_novo.png" alt=""> Matemágica Kids</h3>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Dado</th><th>Para que serve</th><th>Onde fica</th></tr></thead>
+                            <tbody>
+                                <tr><td>Nome ou apelido escolhido para o perfil, idade, avatar, progresso, moedas, selos e configurações</td><td>Montar o perfil do jogo e ajustar a dificuldade à idade</td><td>Somente no aparelho, salvo se os pais ligarem a conta Google (abaixo)</td></tr>
+                                <tr><td>Conta Google (opcional, ligada pelos pais nas Configurações): identificador da conta, nome e e-mail fornecidos pelo Google, e uma cópia do perfil do jogo</td><td>Guardar o progresso na nuvem e recuperá-lo em outro aparelho</td><td>Google Firebase (Authentication e Firestore)</td></tr>
+                                <tr><td>Modo online (opcional): um identificador anônimo, um <strong>apelido gerado automaticamente pelo app</strong> (não é o nome da criança), herói escolhido, pontos, vitórias e derrotas</td><td>Fazer funcionar os duelos, as batalhas e o ranking</td><td>Google Firebase. O apelido e os pontos aparecem para outros jogadores no ranking. Não há chat.</td></tr>
+                                <tr><td>Relatórios de falha: modelo do aparelho, versão do Android e do app, e o registro técnico do erro</td><td>Encontrar e corrigir travamentos</td><td>Firebase Crashlytics (Google)</td></tr>
+                                <tr><td>Compras feitas no app</td><td>Liberar o Premium e os itens comprados</td><td>Google Play. Não recebemos dados de cartão.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><strong>Anúncios:</strong> a versão gratuita mostra anúncios do Google AdMob configurados como <strong>direcionados a crianças</strong>, com classificação máxima <strong>"G" (Livre)</strong>. O app <strong>não usa o ID de publicidade</strong> do aparelho, por isso os anúncios <strong>não são personalizados</strong> e não há rastreamento para publicidade. Quem compra o Premium deixa de ver anúncios.</p>
+                    <p><strong>Notificações:</strong> lembretes enviados pelo próprio aparelho, só se a permissão for concedida.</p>
+                </div>
+
+                <h2 id="pt-ov">3. Dados no Ovelhinhas da Fé</h2>
+                <div class="app-box">
+                    <h3><img src="img/ovelhinhas/icone.png" alt=""> Ovelhinhas da Fé</h3>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Dado</th><th>Para que serve</th><th>Onde fica</th></tr></thead>
+                            <tbody>
+                                <tr><td>Entrar sem conta (perfil anônimo): apenas um identificador anônimo</td><td>Guardar o progresso sem pedir nenhum dado pessoal</td><td>Google Firebase</td></tr>
+                                <tr><td>Conta criada pelo responsável: nome (da criança ou do responsável), e-mail e senha, ou conta Google</td><td>Entrar no app e recuperar o progresso em outro aparelho</td><td>Google Firebase Authentication. A senha é gerida pelo Firebase e nunca é guardada por nós em texto.</td></tr>
+                                <tr><td>Progresso: histórias concluídas e acessadas, favoritas, quizzes, selos e atividades</td><td>Continuar de onde parou e mostrar as conquistas</td><td>No aparelho e no Google Firestore</td></tr>
+                                <tr><td>Dados técnicos de uso, <strong>sem nome e sem e-mail</strong>: tipo de entrada (anônima, Google ou e-mail), data de criação e do último acesso, dias de uso, versão do app, plataforma e se há assinatura</td><td>Saber quantas famílias usam o app e melhorar o conteúdo</td><td>Google Firestore</td></tr>
+                                <tr><td>Assinatura Premium</td><td>Liberar as histórias Premium</td><td>Google Play. Não recebemos dados de cartão.</td></tr>
+                                <tr><td>Histórias baixadas para ouvir sem internet</td><td>Funcionar sem conexão</td><td>Somente no aparelho</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><strong>Sem anúncios:</strong> o Ovelhinhas da Fé não exibe publicidade.</p>
+                    <p><strong>Narração:</strong> a leitura em voz alta usa a voz do próprio aparelho. Nada do que é falado é gravado ou enviado.</p>
+                    <p><strong>Notificações:</strong> um lembrete diário "Hora da história!", no horário escolhido pelos pais, só se a permissão for concedida.</p>
+                </div>
+
+                <h2 id="pt-nao">4. O que nunca coletamos</h2>
+                <ul>
+                    <li>Localização (precisa ou aproximada), contatos, fotos, vídeos, arquivos pessoais, câmera ou microfone.</li>
+                    <li>ID de publicidade ou qualquer identificador usado para rastrear a criança entre apps.</li>
+                    <li>Mensagens: os Aplicativos não têm chat nem permitem enviar texto livre a outras pessoas.</li>
+                    <li>Dados de cartão ou bancários: os pagamentos são feitos inteiramente pela Google Play.</li>
+                </ul>
+                <p>Não vendemos, alugamos nem trocamos dados pessoais com ninguém.</p>
+
+                <h2 id="pt-terceiros">5. Serviços de terceiros</h2>
+                <p>Usamos serviços do Google que seguem as suas próprias políticas e os seus requisitos para apps infantis:</p>
+                <ul>
+                    <li><strong>Google Firebase</strong> (Authentication, Firestore e Crashlytics): <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">privacidade do Firebase</a></li>
+                    <li><strong>Google AdMob</strong> (somente no Matemágica Kids): <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">política do AdMob</a></li>
+                    <li><strong>Google Play</strong> (compras e assinaturas): <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a></li>
+                </ul>
+                <p>Os servidores do Google podem ficar fora do Brasil. Essa transferência internacional segue as garantias previstas na LGPD (art. 33) e nos contratos de proteção de dados do Google.</p>
+                <p>Também podemos divulgar dados quando a lei exigir, por ordem judicial ou para proteger a segurança dos usuários.</p>
+
+                <h2 id="pt-criancas">6. Crianças e consentimento dos pais</h2>
+                <ul>
+                    <li>Os Aplicativos podem ser usados sem criar conta. Criar ou ligar uma conta é uma escolha dos pais ou responsáveis, feita em área protegida por um desafio para adultos.</li>
+                    <li>Tratamos os dados das crianças sempre no seu <strong>melhor interesse</strong> (art. 14 da LGPD) e só para fazer o app funcionar.</li>
+                    <li>No Matemágica Kids, o modo online usa um apelido gerado pelo app, para que o nome da criança não apareça para outros jogadores.</li>
+                    <li>Se souber que uma criança nos enviou dados sem o consentimento dos pais, escreva-nos e vamos apagá-los.</li>
+                </ul>
+
+                <h2 id="pt-guarda">7. Por quanto tempo guardamos</h2>
+                <ul>
+                    <li>Os dados no aparelho ficam até o app ser desinstalado ou o progresso ser apagado nas Configurações.</li>
+                    <li>Os dados na nuvem ficam enquanto a conta existir. Pedidos de exclusão são atendidos em até 15 dias.</li>
+                    <li>Os relatórios de falha são apagados automaticamente pelo Crashlytics após 90 dias.</li>
+                </ul>
+
+                <h2 id="pt-direitos">8. Seus direitos e como apagar os dados</h2>
+                <p>Pais e responsáveis podem, a qualquer momento: confirmar se tratamos dados, ver os dados, corrigi-los, pedir que sejam apagados, retirar o consentimento e pedir a portabilidade (art. 18 da LGPD).</p>
+                <ul>
+                    <li><strong>Matemágica Kids:</strong> com a conta Google conectada, a opção <em>Excluir conta</em> nas Configurações (protegida pelo portão dos pais) apaga o progresso salvo na nuvem e a conta. A opção <em>Apagar todo o progresso</em> limpa o aparelho. Para tirar o apelido do ranking online, escreva-nos.</li>
+                    <li><strong>Ovelhinhas da Fé:</strong> peça a exclusão da conta e do progresso pelo e-mail abaixo, informando o e-mail usado no app (ou que é um perfil anônimo).</li>
+                    <li><strong>Pelo e-mail:</strong> <a href="mailto:dev@marquerafique.com.br?subject=Privacidade%20-%20pedido%20de%20dados">dev@marquerafique.com.br</a>. Respondemos em até 15 dias.</li>
+                </ul>
+                <p>Desinstalar o app interrompe toda a coleta. Você também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).</p>
+
+                <h2 id="pt-seguranca">9. Segurança</h2>
+                <p>Toda a comunicação é feita por conexão criptografada (HTTPS). Regras de segurança no banco de dados impedem que um usuário veja ou altere o perfil de outro. O e-mail do responsável nunca aparece por inteiro na tela do app.</p>
+
+                <h2 id="pt-mudancas">10. Mudanças nesta política</h2>
+                <p>Se mudarmos esta política, atualizaremos esta página e a data acima. Se a mudança alterar o uso dos dados das crianças, pediremos de novo o consentimento dos pais quando a lei exigir.</p>
+
+                <div class="contact-box">
+                    <h3 style="margin-top:0">Fale conosco</h3>
+                    <p>Dúvidas sobre privacidade, pedidos de acesso ou exclusão:</p>
+                    <a href="mailto:dev@marquerafique.com.br" style="font-weight:800; font-size:1.1rem">dev@marquerafique.com.br</a>
+                </div>
+            </article>
+
+            <!-- ===================== ENGLISH ===================== -->
+            <article id="lang-en" class="lang-section" lang="en" hidden>
+                <h1>Privacy Policy</h1>
+                <p class="meta">Last updated: October 25, 2026</p>
+
+                <p>
+                    This policy explains how the <strong>Matemágica Kids</strong> and <strong>Ovelhinhas da Fé</strong> apps
+                    (the "Apps"), created by <strong>Marque Rafique</strong> ("we"), handle information from the children and
+                    families who use them. The Apps are designed for children and follow Brazil's
+                    <strong>General Data Protection Law (LGPD)</strong>, the U.S. <strong>Children's Online Privacy Protection Act (COPPA)</strong>
+                    and the <strong>Google Play Families Policy</strong>.
+                </p>
+
+                <div class="note"><p><i class="fas fa-shield-heart" aria-hidden="true"></i> <strong>Summary for parents:</strong> we use the minimum data needed for the app to work. We never ask for location, contacts, photos, camera or microphone. We do not sell data. There is no chat. Purchases, external links and account settings are behind an adult gate. You can ask to see or delete the data at any time.</p></div>
+
+                <nav class="toc" aria-label="Contents">
+                    <strong>On this page</strong>
+                    <ol>
+                        <li><a href="#en-who">Who is responsible</a></li>
+                        <li><a href="#en-mk">Data in Matemágica Kids</a></li>
+                        <li><a href="#en-ov">Data in Ovelhinhas da Fé</a></li>
+                        <li><a href="#en-never">What we never collect</a></li>
+                        <li><a href="#en-third">Third-party services</a></li>
+                        <li><a href="#en-children">Children and parental consent</a></li>
+                        <li><a href="#en-retention">How long we keep data</a></li>
+                        <li><a href="#en-rights">Your rights and deletion</a></li>
+                        <li><a href="#en-security">Security</a></li>
+                        <li><a href="#en-changes">Changes and contact</a></li>
+                    </ol>
+                </nav>
+
+                <h2 id="en-who">1. Who is responsible for the data</h2>
+                <p>The data controller is <strong>Marque Rafique</strong>, developer of the Apps. For any privacy matter, write to <a href="mailto:dev@marquerafique.com.br">dev@marquerafique.com.br</a>.</p>
+
+                <h2 id="en-mk">2. Data in Matemágica Kids</h2>
+                <div class="app-box">
+                    <h3><img src="ic_app_novo.png" alt=""> Matemágica Kids</h3>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Data</th><th>Purpose</th><th>Where it is kept</th></tr></thead>
+                            <tbody>
+                                <tr><td>Name or nickname chosen for the profile, age, avatar, progress, coins, badges and settings</td><td>Build the game profile and adapt difficulty to the child's age</td><td>Only on the device, unless parents link a Google account (below)</td></tr>
+                                <tr><td>Google account (optional, linked by parents in Settings): account identifier, name and email provided by Google, and a copy of the game profile</td><td>Back up progress to the cloud and restore it on another device</td><td>Google Firebase (Authentication and Firestore)</td></tr>
+                                <tr><td>Online mode (optional): an anonymous identifier, a <strong>nickname generated automatically by the app</strong> (not the child's name), chosen hero, points, wins and losses</td><td>Run duels, battles and the leaderboard</td><td>Google Firebase. The nickname and points are shown to other players on the leaderboard. There is no chat.</td></tr>
+                                <tr><td>Crash reports: device model, Android and app version, and the technical error log</td><td>Find and fix crashes</td><td>Firebase Crashlytics (Google)</td></tr>
+                                <tr><td>In-app purchases</td><td>Unlock Premium and purchased items</td><td>Google Play. We never receive card details.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><strong>Ads:</strong> the free version shows Google AdMob ads configured as <strong>child-directed</strong>, with a maximum rating of <strong>"G" (General audiences)</strong>. The app <strong>does not use the device advertising ID</strong>, so ads are <strong>not personalized</strong> and there is no ad tracking. Premium removes all ads.</p>
+                    <p><strong>Notifications:</strong> reminders sent by the device itself, only if permission is granted.</p>
+                </div>
+
+                <h2 id="en-ov">3. Data in Ovelhinhas da Fé</h2>
+                <div class="app-box">
+                    <h3><img src="img/ovelhinhas/icone.png" alt=""> Ovelhinhas da Fé</h3>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Data</th><th>Purpose</th><th>Where it is kept</th></tr></thead>
+                            <tbody>
+                                <tr><td>Play without an account (anonymous profile): only an anonymous identifier</td><td>Save progress without asking for personal data</td><td>Google Firebase</td></tr>
+                                <tr><td>Account created by a parent: name (of the child or parent), email and password, or a Google account</td><td>Sign in and restore progress on another device</td><td>Google Firebase Authentication. The password is handled by Firebase and never stored by us in plain text.</td></tr>
+                                <tr><td>Progress: completed and opened stories, favorites, quizzes, badges and activities</td><td>Continue where the child stopped and show achievements</td><td>On the device and in Google Firestore</td></tr>
+                                <tr><td>Technical usage data, <strong>without name or email</strong>: sign-in type (anonymous, Google or email), creation and last-access dates, active days, app version, platform and subscription status</td><td>Know how many families use the app and improve the content</td><td>Google Firestore</td></tr>
+                                <tr><td>Premium subscription</td><td>Unlock Premium stories</td><td>Google Play. We never receive card details.</td></tr>
+                                <tr><td>Stories downloaded for offline listening</td><td>Work without a connection</td><td>Only on the device</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><strong>No ads:</strong> Ovelhinhas da Fé does not show advertising.</p>
+                    <p><strong>Narration:</strong> read-aloud uses the device's own voice. Nothing spoken is recorded or sent.</p>
+                    <p><strong>Notifications:</strong> a daily "Story time!" reminder at the time chosen by parents, only if permission is granted.</p>
+                </div>
+
+                <h2 id="en-never">4. What we never collect</h2>
+                <ul>
+                    <li>Location (precise or approximate), contacts, photos, videos, personal files, camera or microphone.</li>
+                    <li>Advertising ID or any identifier used to track the child across apps.</li>
+                    <li>Messages: the Apps have no chat and do not allow sending free text to other people.</li>
+                    <li>Card or banking details: payments are handled entirely by Google Play.</li>
+                </ul>
+                <p>We do not sell, rent or trade personal data with anyone.</p>
+
+                <h2 id="en-third">5. Third-party services</h2>
+                <p>We use Google services, which follow their own policies and their requirements for children's apps:</p>
+                <ul>
+                    <li><strong>Google Firebase</strong> (Authentication, Firestore and Crashlytics): <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy</a></li>
+                    <li><strong>Google AdMob</strong> (Matemágica Kids only): <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob policy</a></li>
+                    <li><strong>Google Play</strong> (purchases and subscriptions): <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+                </ul>
+                <p>Google servers may be located outside Brazil. This international transfer follows the safeguards of the LGPD (article 33) and Google's data protection terms.</p>
+                <p>We may also disclose data when required by law, by court order, or to protect users' safety.</p>
+
+                <h2 id="en-children">6. Children and parental consent</h2>
+                <ul>
+                    <li>The Apps can be used without creating an account. Creating or linking an account is a choice made by parents or guardians, in an area protected by an adult challenge.</li>
+                    <li>We always process children's data in their <strong>best interest</strong> (LGPD article 14) and only to make the app work.</li>
+                    <li>In Matemágica Kids, online mode uses a nickname generated by the app, so the child's name is never shown to other players.</li>
+                    <li>If you learn that a child has sent us data without parental consent, write to us and we will delete it.</li>
+                </ul>
+
+                <h2 id="en-retention">7. How long we keep data</h2>
+                <ul>
+                    <li>Data on the device stays until the app is uninstalled or progress is erased in Settings.</li>
+                    <li>Cloud data is kept while the account exists. Deletion requests are handled within 15 days.</li>
+                    <li>Crash reports are deleted automatically by Crashlytics after 90 days.</li>
+                </ul>
+
+                <h2 id="en-rights">8. Your rights and how to delete data</h2>
+                <p>Parents and guardians can at any time: confirm whether we process data, access it, correct it, ask for deletion, withdraw consent and request portability.</p>
+                <ul>
+                    <li><strong>Matemágica Kids:</strong> with the Google account connected, the <em>Delete account</em> option in Settings (behind the parent gate) erases the cloud progress and the account. <em>Erase all progress</em> clears the device. To remove the nickname from the online leaderboard, write to us.</li>
+                    <li><strong>Ovelhinhas da Fé:</strong> request deletion of the account and progress by email, giving the email used in the app (or saying it is an anonymous profile).</li>
+                    <li><strong>By email:</strong> <a href="mailto:dev@marquerafique.com.br?subject=Privacy%20-%20data%20request">dev@marquerafique.com.br</a>. We reply within 15 days.</li>
+                </ul>
+                <p>Uninstalling the app stops all collection.</p>
+
+                <h2 id="en-security">9. Security</h2>
+                <p>All communication uses an encrypted connection (HTTPS). Security rules in the database prevent one user from reading or changing another user's profile. The parent's email is never shown in full on the app screen.</p>
+
+                <h2 id="en-changes">10. Changes to this policy</h2>
+                <p>If we change this policy, we will update this page and the date above. If a change affects how children's data is used, we will ask for parental consent again where the law requires.</p>
+
+                <div class="contact-box">
+                    <h3 style="margin-top:0">Contact us</h3>
+                    <p>Privacy questions, access or deletion requests:</p>
+                    <a href="mailto:dev@marquerafique.com.br" style="font-weight:800; font-size:1.1rem">dev@marquerafique.com.br</a>
+                </div>
+            </article>
         </div>
+    </main>
 
-        <!-- PORTUGUESE CONTENT -->
-        <div id="content-pt" class="content-section">
-            <h1>Política de Privacidade</h1>
-            <p><strong>Data de Vigência:</strong> 10 de Fevereiro de 2026</p>
-
-            <p>Esta política de privacidade aplica-se ao aplicativo <strong>Matemágica Kids</strong> (aqui referido como "Aplicativo") para dispositivos móveis, criado por <strong>Marque Rafique</strong> (aqui referido como "Provedor de Serviço") como um serviço suportado por anúncios (Ad Supported). Este serviço é destinado ao uso "COMO ESTÁ" (AS IS).</p>
-
-            <h2>Coleta e Uso de Informações</h2>
-            <p>O Aplicativo coleta informações quando você o baixa e utiliza. Essas informações podem incluir:</p>
-            <ul>
-                <li>O endereço de Protocolo de Internet (IP) do seu dispositivo;</li>
-                <li>As páginas do Aplicativo que você visita, a hora e data da sua visita, e o tempo gasto nessas páginas;</li>
-                <li>O tempo total gasto no Aplicativo;</li>
-                <li>O sistema operacional que você usa no seu dispositivo móvel.</li>
-            </ul>
-            <p>O Aplicativo não coleta informações precisas sobre a localização do seu dispositivo móvel.</p>
-            <p>O Provedor de Serviço pode usar as informações fornecidas para contatá-lo ocasionalmente, fornecendo informações importantes, avisos necessários e promoções de marketing.</p>
-            <p>Para uma melhor experiência, ao usar o Aplicativo, o Provedor de Serviço pode exigir que você forneça certas informações de identificação pessoal, incluindo, mas não se limitando a, Nome. As informações solicitadas serão retidas e usadas conforme descrito nesta política de privacidade.</p>
-
-            <h2>Acesso de Terceiros</h2>
-            <p>Apenas dados agregados e anonimizados são transmitidos periodicamente a serviços externos para ajudar o Provedor de Serviço a melhorar o Aplicativo e seu serviço. O Provedor de Serviço pode compartilhar suas informações com terceiros das formas descritas nesta declaração de privacidade.</p>
-            <p>Observe que o Aplicativo utiliza serviços de terceiros que possuem sua própria Política de Privacidade sobre o manuseio de dados. Abaixo estão os links para a Política de Privacidade dos provedores de serviços terceirizados utilizados pelo Aplicativo:</p>
-            <ul>
-                <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
-                <li><a href="https://support.google.com/admob/answer/6128543?hl=pt-PT" target="_blank">AdMob</a></li>
-            </ul>
-
-            <p>O Provedor de Serviço pode divulgar Informações Fornecidas pelo Usuário e Coletadas Automaticamente:</p>
-            <ul>
-                <li>conforme exigido por lei, como para cumprir uma intimação ou processo legal semelhante;</li>
-                <li>quando acreditarem de boa fé que a divulgação é necessária para proteger seus direitos, proteger sua segurança ou a segurança de outros, investigar fraudes ou responder a uma solicitação governamental;</li>
-                <li>com seus prestadores de serviços confiáveis que trabalham em seu nome, não têm uso independente das informações divulgadas a eles e concordaram em aderir às regras estabelecidas nesta declaração de privacidade.</li>
-            </ul>
-
-            <h2>Direitos de Desistência (Opt-Out)</h2>
-            <p>Você pode interromper toda a coleta de informações pelo Aplicativo facilmente desinstalando-o. Você pode usar os processos padrão de desinstalação disponíveis como parte do seu dispositivo móvel ou através da loja de aplicativos ou rede.</p>
-
-            <h2>Política de Retenção de Dados</h2>
-            <p>O Provedor de Serviço reterá os dados fornecidos pelo usuário enquanto você usar o Aplicativo e por um tempo razoável depois disso. Se você deseja que excluam os Dados Fornecidos pelo Usuário que você forneceu via Aplicativo, entre em contato em <a href="mailto:dev@marquerafique.com.br">dev@marquerafique.com.br</a> e eles responderão em um tempo razoável.</p>
-
-            <h2>Crianças</h2>
-            <p>O Provedor de Serviço não usa o Aplicativo para solicitar dados intencionalmente ou comercializar para crianças menores de 13 anos.</p>
-            <p>O Aplicativo não se dirige a menores de 13 anos. O Provedor de Serviço não coleta intencionalmente informações de identificação pessoal de crianças menores de 13 anos. Caso o Provedor de Serviço descubra que uma criança menor de 13 anos forneceu informações pessoais, o Provedor de Serviço excluirá imediatamente isso de seus servidores. Se você é pai/mãe ou responsável e sabe que seu filho nos forneceu informações pessoais, entre em contato com o Provedor de Serviço para que ele possa tomar as ações necessárias.</p>
-
-            <h2>Segurança</h2>
-            <p>O Provedor de Serviço preocupa-se em proteger a confidencialidade das suas informações. O Provedor de Serviço fornece salvaguardas físicas, eletrônicas e processuais para proteger as informações que processa e mantém.</p>
-
-            <h2>Alterações</h2>
-            <p>Esta Política de Privacidade pode ser atualizada ocasionalmente por qualquer motivo. O Provedor de Serviço irá notificá-lo sobre quaisquer alterações na Política de Privacidade atualizando esta página com a nova Política de Privacidade. É aconselhável consultar esta Política de Privacidade regularmente para verificar alterações, pois o uso contínuo é considerado aprovação de todas as alterações.</p>
-
-            <h2>Seu Consentimento</h2>
-            <p>Ao usar o Aplicativo, você consente com o processamento de suas informações conforme estabelecido nesta Política de Privacidade agora e conforme alterado por nós.</p>
-
-            <div class="contact-box">
-                <h3>Fale Conosco</h3>
-                <p>Se tiver dúvidas sobre privacidade ao usar o Aplicativo, ou tiver perguntas sobre as práticas, entre em contato com o Provedor de Serviço via e-mail:</p>
-                <a href="mailto:dev@marquerafique.com.br" style="font-size: 1.1rem; font-weight: bold;">dev@marquerafique.com.br</a>
-            </div>
-
-            <div class="footer-links">
-                <a href="termos.html">Termos de Uso</a> | <a href="index.html">Portfólio do Desenvolvedor</a>
-            </div>
+    <footer class="site-footer">
+        <div class="container">
+            <span>© 2026 Marque Rafique</span>
+            <nav aria-label="Rodapé">
+                <a href="index.html">Início</a>
+                <a href="termos.html">Termos de Uso</a>
+                <a href="mailto:suporte@marquerafique.com.br">Suporte</a>
+            </nav>
         </div>
+    </footer>
 
-    </div>
-
-    <script>
-        function setLang(lang) {
-            // Hide all contents
-            document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
-            // Remove active class from buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-
-            // Show selected content
-            document.getElementById('content-' + lang).classList.add('active');
-            
-            // Set button active state
-            const buttons = document.querySelectorAll('.lang-btn');
-            if (lang === 'en') buttons[0].classList.add('active');
-            else buttons[1].classList.add('active');
-
-            // Update html lang attribute
-            document.documentElement.lang = lang === 'en' ? 'en' : 'pt-br';
-        }
-    </script>
+    <script src="idioma.js"></script>
 </body>
 </html>

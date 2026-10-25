@@ -1,524 +1,317 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Matemágica Kids - Aventura Épica dos Números</title>
-    <meta name="description" content="Em Matemágica Kids, as crianças não estudam números — elas vivem uma aventura épica! Aprenda somar, subtrair e muito mais com Helena e sua turma.">
-    
-    <!-- Open Graph / Facebook / WhatsApp -->
-    <meta property="og:title" content="Matemágica Kids - Aprenda Matemática Brincando">
-    <meta property="og:description" content="Junte-se a Helena e Bisteka nessa jornada mágica pelo mundo dos números.">
+    <title>Matemágica Kids | Aventura mágica no mundo dos números</title>
+    <meta name="description" content="Matemágica Kids: jogo educativo para Android em que as crianças aprendem a contar, somar, subtrair, multiplicar e dividir numa aventura com mais de 20 heróis mágicos.">
+    <link rel="canonical" href="https://www.marquerafique.com.br/matemagicakids.html">
+    <link rel="icon" href="ic_app_novo.png">
+
+    <meta property="og:title" content="Matemágica Kids | Aprender matemática brincando">
+    <meta property="og:description" content="Junte-se à Helena, ao Bistekinha e à Liga dos Matemágicos numa jornada mágica pelo mundo dos números.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="capa.png">
-    
+    <meta property="og:url" content="https://www.marquerafique.com.br/matemagicakids.html">
+    <meta property="og:image" content="https://www.marquerafique.com.br/img/matemagica/og.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilo.css">
 
     <style>
-        :root {
-            --primary: #2563eb;
-            --accent-pink: #ec4899;
-            --accent-yellow: #eab308;
-            --accent-green: #22c55e;
-            --accent-purple: #a855f7;
-            --bg: #0f172a;
-            --card: #1e293b;
-            --text: #f8fafc;
-            --muted: #94a3b8;
-            --border: rgba(255,255,255,0.08);
-        }
-
+        :root { --accent: #a855f7; --yellow: #facc15; --pink: #f472b6; --green: #22c55e; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            padding: 0;
-            line-height: 1.7;
-            overflow-x: hidden;
+            background: radial-gradient(900px 500px at 85% -5%, rgba(168, 85, 247, 0.22), transparent 60%),
+                        radial-gradient(700px 400px at -10% 30%, rgba(59, 130, 246, 0.15), transparent 60%),
+                        linear-gradient(180deg, #0f172a, #0b1120 70%);
+            background-color: #0b1120;
         }
+        .topbar .brand img { height: 46px; }
 
-        h1, h2, h3, h4 { margin-top: 0; font-weight: 700; }
-        h2 { font-size: 2rem; margin-bottom: 2rem; text-align: center; color: white; }
-        p { color: var(--muted); margin-bottom: 1rem; }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        .hero { padding: 4rem 0 3rem; position: relative; overflow: hidden; isolation: isolate; }
+        .hero::before { content: ""; position: absolute; inset: -12px; z-index: -1;
+            background: linear-gradient(90deg, rgba(15,10,40,.92) 0%, rgba(15,10,40,.74) 50%, rgba(15,10,40,.5) 100%),
+                        url("img/matemagica/capa_fundo.webp") center 58% / cover no-repeat;
+            filter: blur(3px); }
+        .hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 90px; z-index: -1; background: linear-gradient(to bottom, transparent, #0b1120); pointer-events: none; }
+        @media (max-width: 820px) {
+            .hero::before { background: linear-gradient(180deg, rgba(15,10,40,.6) 0%, rgba(15,10,40,.82) 50%, rgba(15,10,40,.94) 100%),
+                        url("img/matemagica/capa_fundo.webp") center 62% / cover no-repeat; }
         }
+        .hero .container { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; }
+        .hero h1 { font-size: clamp(2.1rem, 5.5vw, 3.4rem); font-weight: 900; margin-bottom: 1.2rem; }
+        .hero h1 span { background: linear-gradient(90deg, #fff, var(--pink), var(--yellow)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .hero .lead { font-size: 1.15rem; max-width: 580px; }
+        .hero .actions { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; margin-top: 1.5rem; }
+        .hero .req { font-size: .85rem; color: var(--muted); margin-top: .75rem; }
+        .hero-art { position: relative; justify-self: center; width: min(420px, 90vw); display: flex; flex-direction: column; align-items: center; gap: 1.4rem; }
+        .hero-art .logo { width: 100%; filter: drop-shadow(0 18px 30px rgba(0,0,0,.45)); animation: flutuar 6s ease-in-out infinite; }
+        .hero-art .icone { width: 30%; max-width: 130px; border-radius: 26%; border: 4px solid rgba(255,255,255,.15); box-shadow: 0 18px 40px rgba(0,0,0,.5); }
+        @keyframes flutuar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 
-        nav {
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+        .hero .container.container-numeros { display: block; margin-top: 2.5rem; }
+        .mundos .grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+        .numeros { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1rem; }
+        .numeros div { text-align: center; padding: 1rem; background: rgba(255,255,255,.03); border: 1px solid var(--border); border-radius: 14px; }
+        .numeros strong { display: block; font-size: 1.8rem; font-weight: 900; color: var(--yellow); }
+        .numeros span { color: var(--muted); font-size: .9rem; }
 
-        .brand {
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        .mundos .card h3 { display: flex; align-items: center; gap: .6rem; color: var(--yellow); font-size: 1.2rem; }
+        .mundos ul { list-style: none; padding: 0; margin: 0; }
+        .mundos li { padding: .55rem 0; border-bottom: 1px solid rgba(255,255,255,.05); color: var(--muted); font-size: .95rem; }
+        .mundos li:last-child { border-bottom: 0; }
+        .mundos li strong { color: var(--text); }
 
-        .nav-logo {
-            height: 40px; 
-            width: auto;
-            display: block;
+        .chars { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)); }
+        .char {
+            background: linear-gradient(180deg, var(--card-2), var(--card)); border: 1px solid var(--border);
+            border-radius: 18px; overflow: hidden; display: flex; flex-direction: column;
+            transition: transform .25s ease, border-color .25s ease;
         }
+        .char:hover { transform: translateY(-5px); border-color: rgba(168, 85, 247, .6); }
+        .char .foto { aspect-ratio: 3 / 4; overflow: hidden; background: #1e1b4b; }
+        .char img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+        .char:hover img { transform: scale(1.06); }
+        .char .info { padding: .8rem .9rem 1rem; }
+        .char strong { display: block; font-size: 1rem; }
+        .char small { display: block; color: var(--muted); font-size: .82rem; line-height: 1.35; margin-top: .2rem; }
+        .char .papel { display: inline-block; margin-top: .5rem; font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: var(--yellow); }
+        .grupo-titulo { margin: 2.5rem 0 1rem; font-size: 1.2rem; display: flex; align-items: center; gap: .6rem; }
+        .grupo-titulo:first-of-type { margin-top: 0; }
 
-        .back-link {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .back-link:hover { color: var(--primary); }
+        .recursos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+        .recurso { display: flex; gap: 1rem; align-items: flex-start; }
+        .recurso .ic { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(34, 197, 94, .12); color: var(--green); font-size: 1.1rem; }
+        .recurso h3 { font-size: 1.05rem; margin: 0 0 .2rem; }
+        .recurso p { margin: 0; font-size: .93rem; }
 
-        .hero {
-            padding: 5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -100px; right: -100px;
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(37,99,235,0.2) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: -1;
-        }
+        .pais { text-align: center; }
+        .pais .selos { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin: 1.75rem 0; }
+        .pais .selos span { display: inline-flex; align-items: center; gap: .5rem; background: rgba(255,255,255,.04); border: 1px solid var(--border); padding: .6rem 1.1rem; border-radius: 999px; color: var(--text); font-size: .93rem; }
+        .pais .selos i { color: var(--green); }
+        .cta-final { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .cta-final h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-final .btn-primary { --accent: #16a34a; }
 
-        .hero-text { flex: 1; }
+        .ficha { font-size: .85rem; color: #7c8aa3; text-align: center; }
 
-        .hero h1 {
-            font-size: 3rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, #fff, var(--accent-pink));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-sub {
-            font-size: 1.15rem;
-            color: var(--muted);
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-
-        .app-icon {
-            width: 200px; height: 200px;
-            border-radius: 40px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            animation: float 6s ease-in-out infinite;
-            border: 4px solid rgba(255,255,255,0.1);
-            object-fit: cover;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .btn-download {
-            background: linear-gradient(135deg, var(--primary), #4f46e5);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 12px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .btn-download:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
-        }
-
-        .section-world {
-            background: rgba(255,255,255,0.02);
-            padding: 4rem 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .world-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .world-card {
-            background: var(--card);
-            padding: 1.5rem;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-        }
-
-        .world-card h3 { color: var(--accent-yellow); display: flex; align-items: center; gap: 10px; font-size: 1.3rem; }
-        .world-list { list-style: none; padding: 0; margin: 0; }
-        .world-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            font-size: 0.95rem;
-            color: var(--muted);
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-        .world-list li:last-child { border-bottom: none; }
-        .world-list i { color: var(--primary); margin-top: 5px; font-size: 0.8rem; }
-
-        .section-chars { padding: 4rem 0; }
-        
-        .char-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .char-card {
-            background: var(--card);
-            border-radius: 16px;
-            padding: 1.5rem;
-            text-align: center;
-            border: 1px solid var(--border);
-            transition: transform 0.2s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .char-card:hover { transform: translateY(-5px); border-color: var(--accent-purple); }
-
-        .char-img {
-            width: 100px; height: 100px;
-            object-fit: contain;
-            margin-bottom: 1rem;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        .char-card:hover .char-img {
-            transform: scale(1.15) rotate(3deg);
-        }
-
-        .char-name { font-weight: 700; color: white; margin-bottom: 0.5rem; display: block; font-size: 1.1rem; }
-        .char-desc { font-size: 0.85rem; line-height: 1.4; }
-
-        .section-features {
-            padding: 4rem 0;
-            background: linear-gradient(to bottom, var(--bg), #131c31);
-        }
-        
-        .features-cols {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-
-        .feature-item {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .f-icon {
-            flex-shrink: 0;
-            width: 40px; height: 40px;
-            background: rgba(34, 197, 94, 0.1);
-            color: var(--accent-green);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .f-content h4 { margin: 0 0 0.2rem 0; font-size: 1.1rem; color: white; }
-        .f-content p { margin: 0; font-size: 0.9rem; }
-
-        .section-parents {
-            background: var(--card);
-            padding: 3rem;
-            border-radius: 20px;
-            margin: 4rem auto;
-            border: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .check-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        .check-item {
-            background: rgba(255,255,255,0.03);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            border: 1px solid var(--border);
-        }
-        .check-item i { color: var(--accent-green); }
-
-        .tech-info {
-            font-size: 0.8rem;
-            color: #64748b;
-            text-align: center;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-        }
-
-        @media (max-width: 768px) {
-            .hero { flex-direction: column-reverse; text-align: center; padding: 3rem 0; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero-text { width: 100%; }
-            nav { padding: 1rem; }
+        @media (max-width: 860px) {
+            .hero .container { grid-template-columns: 1fr; text-align: center; }
+            .hero .lead { margin: 0 auto; }
+            .hero .actions { justify-content: center; }
+            .hero-art { order: -1; width: min(320px, 80vw); }
+            .numeros { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-    <nav>
-        <a href="index.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> Voltar ao Portfólio
-        </a>
-        <a href="#" class="brand">
-            <img src="logo_2.png" alt="Matemágica Kids Logo" class="nav-logo">
-        </a>
-    </nav>
-
-    <div class="container">
-        <header class="hero">
-            <div class="hero-text">
-                <h1>Uma Aventura Épica no Mundo dos Números!</h1>
-                <p class="hero-sub">
-                    Em Matemágica Kids, as crianças não estudam números — elas vivem uma aventura! 
-                    Guiadas pela curiosa Helena e sua cadelinha Bisteka, os pequenos magos lançam feitiços a cada acerto.
-                </p>
-                <div style="display:flex; flex-direction:column; gap:10px; align-items:flex-start">
-                    <a href="https://play.google.com/store/apps/details?id=com.marquerafique.matemgicakids" target="_blank" class="btn-download">
-                        <i class="fab fa-google-play"></i> Baixar para Android
-                    </a>
-                    <span style="font-size:0.85rem; color:var(--muted); margin-left: 5px;">* Requer Android 7.0 ou superior</span>
-                </div>
-            </div>
-            <div>
-                <img src="ic_app.png" alt="Ícone Matemágica Kids" class="app-icon">
-            </div>
-        </header>
-    </div>
-
-    <section class="section-world">
+    <header class="topbar">
         <div class="container">
-            <h2>O Mundo de Matemágica</h2>
-            <div class="world-grid">
-                
-                <article class="world-card">
-                    <h3><i class="fas fa-dungeon"></i> Escola de Magia</h3>
-                    <ul class="world-list">
-                        <li><i class="fas fa-circle"></i> <strong>Aprender a Contar:</strong> Dê os primeiros passos com itens mágicos.</li>
-                        <li><i class="fas fa-circle"></i> <strong>Laboratório de Poções:</strong> Misture ingredientes para somar e subtrair.</li>
-                        <li><i class="fas fa-circle"></i> <strong>Bolhas Flutuantes:</strong> Maior, menor ou igual? Estoure a certa!</li>
-                        <li><i class="fas fa-circle"></i> <strong>Relógio Mágico:</strong> Aprenda a ler as horas em relógios encantados.</li>
-                    </ul>
-                </article>
-
-                <article class="world-card">
-                    <h3><i class="fas fa-shield-alt"></i> Modos de Aventura</h3>
-                    <ul class="world-list">
-                        <li><i class="fas fa-circle"></i> <strong>Arena dos Números:</strong> Ative a devastadora Fúria Numérica!</li>
-                        <li><i class="fas fa-circle"></i> <strong>Fábrica de Enigmas:</strong> Histórias matemáticas. Cuidado com os 3 corações!</li>
-                        <li><i class="fas fa-circle"></i> <strong>Contagem Explosiva:</strong> Desarme a bomba antes do tempo acabar.</li>
-                        <li><i class="fas fa-circle"></i> <strong>Batalha das Frações:</strong> Duelos contra Goblins ardilosos.</li>
-                    </ul>
-                </article>
-
-                <article class="world-card">
-                    <h3><i class="fas fa-book-open"></i> Cursos do Grimório</h3>
-                    <ul class="world-list">
-                        <li><i class="fas fa-circle"></i> <strong>Contagem Mental:</strong> Truques para calcular de cabeça.</li>
-                        <li><i class="fas fa-circle"></i> <strong>Multiplicação Inteligente:</strong> Domine a tabuada sem sofrimento.</li>
-                        <li><i class="fas fa-circle"></i> <strong>Adição na Mente:</strong> Métodos para somar números grandes.</li>
-                    </ul>
-                </article>
-
-            </div>
+            <a class="brand" href="index.html" aria-label="Voltar ao início">
+                <img src="ic_app_novo.png" alt="" width="46" height="46" style="border-radius:12px">
+                <span><strong>Matemágica Kids</strong><small>por Marque Rafique</small></span>
+            </a>
+            <nav class="nav-links" aria-label="Seções">
+                <a href="#mundo">O mundo</a>
+                <a href="#personagens">Personagens</a>
+                <a href="#recursos">Recursos</a>
+                <a href="#pais">Para os pais</a>
+                <a href="index.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> Início</a>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <section class="section-chars">
-        <div class="container">
-            <h2>Personagens Inesquecíveis</h2>
-            <div class="char-grid">
-                
-                <div class="char-card">
-                    <img src="personagem_helena.png" alt="Helena" class="char-img">
-                    <span class="char-name">Helena</span>
-                    <span class="char-desc">A criadora deste mundo. Sua imaginação transforma números em magia.</span>
-                </div>
-
-                <div class="char-card">
-                    <img src="personagem_bisteka.png" alt="Bisteka" class="char-img">
-                    <span class="char-name">Bisteka</span>
-                    <span class="char-desc">Fiel companheira, sempre pronta para farejar a resposta certa.</span>
-                </div>
-
-                <div class="char-card">
-                    <img src="personagem_garni.png" alt="Garni" class="char-img">
-                    <span class="char-name">Garni</span>
-                    <span class="char-desc">O galinho corajoso que acorda os jovens magos para os desafios.</span>
-                </div>
-
-                <div class="char-card">
-                    <img src="personagem_grunf.png" alt="Grunf" class="char-img">
-                    <span class="char-name">Grunf</span>
-                    <span class="char-desc">Um ogro de coração grande que vende as poções mais poderosas.</span>
-                </div>
-
-                <div class="char-card">
-                    <img src="personagem_capitao_somatico.png" alt="Capitão Somático" class="char-img">
-                    <span class="char-name">Cap. Somático</span>
-                    <span class="char-desc">Velho lobo-do-mar da matemática, cheio de conselhos sábios.</span>
-                </div>
-
-                <div class="char-card">
-                    <img src="personagem_fadinha_logica.png" alt="Fadinha da Lógica" class="char-img">
-                    <span class="char-name">Fadinha Lógica</span>
-                    <span class="char-desc">Ilumina os caminhos confusos com o pó de pirlimpimpim do raciocínio.</span>
-                </div>
-
-                <div class="char-card">
-                    <img src="personagem_grimorio.png" alt="Grimório" class="char-img">
-                    <span class="char-name">Grimório</span>
-                    <span class="char-desc">O livro mágico rabugento que adora partilhar sabedoria.</span>
-                </div>
-
-                <div class="char-card">
-                    <img src="personagem_professor_numerus.png" alt="Professor Numerus" class="char-img">
-                    <span class="char-name">Prof. Numerus</span>
-                    <span class="char-desc">Cientista maluco que cria invenções e problemas desafiadores.</span>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="section-features">
-        <div class="container">
-            <h2 style="margin-bottom:3rem">Recursos que Encantam</h2>
-            <div class="features-cols">
-                
+    <main id="conteudo">
+        <section class="hero">
+            <div class="container">
                 <div>
-                    <div class="feature-item">
-                        <div class="f-icon"><i class="fas fa-flask"></i></div>
-                        <div class="f-content">
-                            <h4>Sistema de Poções</h4>
-                            <p>Use Poção de Foco, Elixir da Vitalidade e Poção do Cronos estrategicamente para vencer.</p>
-                        </div>
+                    <span class="eyebrow">Jogo educativo para Android</span>
+                    <h1>Uma aventura <span>mágica</span> no mundo dos números!</h1>
+                    <p class="lead">
+                        No Matemágica Kids, as crianças não estudam números: elas vivem uma aventura! Ao lado da
+                        Helena e do cãozinho Bistekinha, cada conta certa vira um feitiço, cada minigame revela um
+                        herói da Liga dos Matemágicos e cada conquista enche o Grimório de sabedoria.
+                    </p>
+                    <div class="actions">
+                        <a href="https://play.google.com/store/apps/details?id=com.marquerafique.matemgicakids" target="_blank" rel="noopener" class="btn btn-play">
+                            <i class="fab fa-google-play" aria-hidden="true"></i>
+                            <span><small>Disponível no</small>Google Play</span>
+                        </a>
+                        <a href="#personagens" class="btn">Conhecer os heróis</a>
                     </div>
-                    <div class="feature-item">
-                        <div class="f-icon"><i class="fas fa-medal"></i></div>
-                        <div class="f-content">
-                            <h4>+40 Selos Colecionáveis</h4>
-                            <p>De "Aprendiz" a "Fênix do Conhecimento". Conquiste todos!</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="f-icon"><i class="fas fa-layer-group"></i></div>
-                        <div class="f-content">
-                            <h4>Sistema de Níveis RPG</h4>
-                            <p>Ganhe XP, suba de nível e desbloqueie títulos como "Mago Racional".</p>
-                        </div>
-                    </div>
+                    <p class="req">Grátis com compras opcionais • Requer Android 7.0 ou superior</p>
                 </div>
-
-                <div>
-                    <div class="feature-item">
-                        <div class="f-icon"><i class="fas fa-music"></i></div>
-                        <div class="f-content">
-                            <h4>Trilha Sonora Original</h4>
-                            <p>Mais de 20 músicas temáticas para colecionar na Loja de Músicas.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="f-icon"><i class="fas fa-user-circle"></i></div>
-                        <div class="f-content">
-                            <h4>Meu Cantinho</h4>
-                            <p>Perfil personalizável com avatar, estatísticas detalhadas e galeria.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="f-icon"><i class="fas fa-universal-access"></i></div>
-                        <div class="f-content">
-                            <h4>Acessibilidade Total</h4>
-                            <p>Modo daltônico, redução de movimento e controle de volume independente.</p>
-                        </div>
-                    </div>
+                <div class="hero-art">
+                    <img class="logo" src="img/logo_matemagica.webp" alt="Logotipo do Matemágica Kids">
+                    <img class="icone" src="ic_app_novo.png" alt="" width="140" height="140">
                 </div>
-
             </div>
-        </div>
-    </section>
-
-    <div class="container">
-        <section class="section-parents">
-            <h2 style="color:var(--primary)">O que os Pais Vão Adorar</h2>
-            <p>Criado pensando na tranquilidade da família e no desenvolvimento da criança.</p>
-            
-            <div class="check-grid">
-                <div class="check-item"><i class="fas fa-lock"></i> Ambiente Seguro (Sem chat)</div>
-                <div class="check-item"><i class="fas fa-wifi"></i> 100% Offline</div>
-                <div class="check-item"><i class="fas fa-chart-line"></i> Aprendizado Progressivo</div>
-                <div class="check-item"><i class="fas fa-gem"></i> Versão Premium Acessível</div>
-            </div>
-
-            <div style="margin-top:3rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1)">
-                <h3 style="color:white; margin-bottom:1rem; font-size:1.5rem">Dê ao seu filho o superpoder da matemática!</h3>
-                <a href="https://play.google.com/store/apps/details?id=com.marquerafique.matemgicakids" target="_blank" class="btn-download" style="background: var(--accent-green); border-color:transparent;">
-                    <i class="fab fa-android"></i> Baixar Agora (Grátis)
-                </a>
+            <div class="container container-numeros">
+                <div class="numeros">
+                    <div><strong>22</strong><span>personagens</span></div>
+                    <div><strong>30+</strong><span>jogos e minigames</span></div>
+                    <div><strong>40+</strong><span>selos colecionáveis</span></div>
+                    <div><strong>4</strong><span>idiomas</span></div>
+                </div>
             </div>
         </section>
 
-        <footer class="tech-info">
-            <p>
-                <strong>Informações Técnicas:</strong><br>
-                Plataforma: Android (SDK 24+, Android 7.0+) • Versão atual: 2.0.1 • 
-                Pacote: com.marquerafique.matemgicakids • Desenvolvedor: Marque Rafique
-            </p>
-            <p style="margin-top:1rem">
-                © 2026 Matemágica Kids • 
-                <a href="privacidade.html" style="color:var(--primary)">Privacidade</a> • 
-                <a href="termos.html" style="color:var(--primary)">Termos de Uso</a>
-            </p>
-        </footer>
-    </div>
+        <section id="mundo" class="mundos">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">O mundo</span>
+                    <h2>O Mundo de Matemágica</h2>
+                    <p>Caminhos diferentes para cada idade e cada jeito de aprender.</p>
+                </div>
+                <div class="grid">
+                    <article class="card">
+                        <h3><i class="fas fa-hat-wizard" aria-hidden="true"></i> Escola de Magia</h3>
+                        <ul>
+                            <li><strong>Aprender a Contar:</strong> os primeiros passos com itens mágicos.</li>
+                            <li><strong>Laboratório de Poções:</strong> misture ingredientes para somar e subtrair.</li>
+                            <li><strong>Portais Numéricos:</strong> maior, menor ou igual? Escolha o portal certo.</li>
+                            <li><strong>Relógio Mágico:</strong> aprenda a ler as horas em relógios encantados.</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3><i class="fas fa-shield-halved" aria-hidden="true"></i> Jornada e Portal Mágico</h3>
+                        <ul>
+                            <li><strong>Arena dos Números:</strong> ative a Fúria Numérica!</li>
+                            <li><strong>Fábrica de Enigmas:</strong> problemas em forma de história.</li>
+                            <li><strong>Contagem Explosiva:</strong> desarme a bomba antes do tempo acabar.</li>
+                            <li><strong>Batalha das Frações, Desafio das Estatuetas e Sentença do Sábio.</strong></li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3><i class="fas fa-users" aria-hidden="true"></i> Liga dos Matemágicos</h3>
+                        <ul>
+                            <li><strong>19 heróis</strong>, cada um com o seu minigame e um poder especial.</li>
+                            <li><strong>Gravidade Zero, Cerco da Tabuada, Memória Mística, Cidade Geométrica</strong> e muito mais.</li>
+                            <li><strong>Torneio Elemental</strong> e duelos online com apelidos, sem chat.</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3><i class="fas fa-book-open" aria-hidden="true"></i> Cursos do Grimório</h3>
+                        <ul>
+                            <li><strong>Contagem Mental:</strong> truques para calcular de cabeça.</li>
+                            <li><strong>Tabuada Estelar:</strong> domine a multiplicação sem sofrimento.</li>
+                            <li><strong>Soma Relâmpago:</strong> métodos para somar números grandes.</li>
+                            <li><strong>O Grimório:</strong> boletim, sabedorias, poções, personagens e títulos.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
 
+        <section id="personagens">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">Personagens</span>
+                    <h2>Personagens inesquecíveis</h2>
+                    <p>Uma turma mágica que acompanha a criança em cada desafio.</p>
+                </div>
+
+                <h3 class="grupo-titulo"><i class="fas fa-heart" aria-hidden="true" style="color:var(--pink)"></i> A turma da Helena</h3>
+                <div class="chars">
+                    <div class="char"><div class="foto"><img src="img/personagens/helena.webp" alt="Helena" loading="lazy"></div><div class="info"><strong>Helena</strong><small>Maga da lógica e dos números.</small></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/bisteka.webp" alt="Bistekinha" loading="lazy"></div><div class="info"><strong>Bistekinha</strong><small>O cãozinho matemágico fiel.</small></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/garni.webp" alt="Galo Garni" loading="lazy"></div><div class="info"><strong>Galo Garni</strong><small>Acorda sempre na hora certa.</small></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/grimorio.png" alt="Grimório" loading="lazy" style="object-fit:contain;background:#2a1a0e"></div><div class="info"><strong>Grimório</strong><small>O livro mágico que guarda todos os segredos da matemática.</small></div></div>
+                </div>
+
+                <h3 class="grupo-titulo"><i class="fas fa-star" aria-hidden="true" style="color:var(--yellow)"></i> A Liga dos Matemágicos</h3>
+                <div class="chars">
+                    <div class="char"><div class="foto"><img src="img/personagens/capitao.webp" alt="Capitão Somático" loading="lazy"></div><div class="info"><strong>Capitão Somático</strong><small>Explorador dos mares numéricos.</small><span class="papel">Mapa do Tesouro das Somatórias</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/barao.webp" alt="Barão Binário" loading="lazy"></div><div class="info"><strong>Barão Binário</strong><small>Senhor dos zeros e uns.</small><span class="papel">Duelo de Códigos</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/orion.webp" alt="Órion Decimal" loading="lazy"></div><div class="info"><strong>Órion Decimal</strong><small>Navegador da gravidade zero.</small><span class="papel">Gravidade Zero</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/algorix.webp" alt="Algorix" loading="lazy"></div><div class="info"><strong>Algorix</strong><small>Guardião dos algoritmos.</small><span class="papel">Sequência Perfeita</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/numerus.webp" alt="Prof. Números" loading="lazy"></div><div class="info"><strong>Prof. Números</strong><small>O guardião do Grande Grimório.</small><span class="papel">Biblioteca Viva</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/caos.webp" alt="Professor Caos" loading="lazy"></div><div class="info"><strong>Professor Caos</strong><small>O vilão que bagunça as equações.</small><span class="papel">Desafio Extremo</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/fadinha.webp" alt="Fadinha da Lógica" loading="lazy"></div><div class="info"><strong>Fadinha da Lógica</strong><small>Ilumina o caminho da verdade.</small><span class="papel">Trilha de Vaga-lumes</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/sabia.webp" alt="Sábia Geômetra" loading="lazy"></div><div class="info"><strong>Sábia Geômetra</strong><small>Arquiteta das formas perfeitas.</small><span class="papel">Cidade Geométrica</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/sabio_eldrin.webp" alt="Sábio Eldrin" loading="lazy"></div><div class="info"><strong>Sábio Eldrin</strong><small>Especialista em raízes profundas.</small><span class="papel">Raízes Profundas</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/arqueiro.webp" alt="Arqueiro Moderno" loading="lazy"></div><div class="info"><strong>Arqueiro Moderno</strong><small>Nunca erra uma percentagem.</small><span class="papel">Estande de Percentagens</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/gruf.webp" alt="Ogro Grunf" loading="lazy"></div><div class="info"><strong>Ogro Grunf</strong><small>Vende poções e detesta matemática.</small><span class="papel">Armadilha do Ogro</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/cavaleiro.webp" alt="Cavaleiro Bondoso" loading="lazy"></div><div class="info"><strong>Cavaleiro Bondoso</strong><small>O protetor com escudo de aço.</small><span class="papel">Defesa Cooperativa</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/mestre_zen.webp" alt="Mestre Zen" loading="lazy"></div><div class="info"><strong>Mestre Zen</strong><small>Encontra o equilíbrio perfeito.</small><span class="papel">Equilíbrio do Pêndulo</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/robo.webp" alt="Robocálculo" loading="lazy"></div><div class="info"><strong>Robocálculo</strong><small>A máquina de precisão exata.</small><span class="papel">Ábaco Mecânico</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/maguinho.webp" alt="Maguinho Pixel" loading="lazy"></div><div class="info"><strong>Maguinho Pixel</strong><small>O bruxo dos mundos digitais.</small><span class="papel">Invasores Cartesianos</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/mistico.webp" alt="Místico Enigma" loading="lazy"></div><div class="info"><strong>Místico Enigma</strong><small>O mestre das ilusões e incógnitas.</small><span class="papel">Memória Mística</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/genio.webp" alt="Algenumerix" loading="lazy"></div><div class="info"><strong>Algenumerix</strong><small>O gênio da lâmpada algébrica.</small><span class="papel">Desejos Algébricos</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/valgrin.webp" alt="Valgrin Tabuador" loading="lazy"></div><div class="info"><strong>Valgrin Tabuador</strong><small>O viking das multiplicações.</small><span class="papel">Cerco da Tabuada</span></div></div>
+                    <div class="char"><div class="foto"><img src="img/personagens/calculino.webp" alt="Calculino" loading="lazy"></div><div class="info"><strong>Calculino</strong><small>O palhaço do cálculo mental.</small><span class="papel">Circo dos Cálculos</span></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recursos">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">Recursos</span>
+                    <h2>Recursos que encantam</h2>
+                </div>
+                <div class="recursos">
+                    <div class="recurso"><div class="ic"><i class="fas fa-flask" aria-hidden="true"></i></div><div><h3>Sistema de poções</h3><p>Poção de Foco, Elixir da Vitalidade, Poção do Cronos e outras para usar com estratégia.</p></div></div>
+                    <div class="recurso"><div class="ic"><i class="fas fa-medal" aria-hidden="true"></i></div><div><h3>Mais de 40 selos</h3><p>Do Aprendiz à Fênix do Conhecimento. Dá para conquistar todos?</p></div></div>
+                    <div class="recurso"><div class="ic"><i class="fas fa-layer-group" aria-hidden="true"></i></div><div><h3>Níveis e títulos</h3><p>Ganhe XP, suba de nível e desbloqueie títulos com vantagens mágicas.</p></div></div>
+                    <div class="recurso"><div class="ic"><i class="fas fa-music" aria-hidden="true"></i></div><div><h3>Trilha sonora original</h3><p>Mais de 20 músicas temáticas para colecionar.</p></div></div>
+                    <div class="recurso"><div class="ic"><i class="fas fa-chart-line" aria-hidden="true"></i></div><div><h3>Dificuldade por idade</h3><p>Desafios ajustados para Pequeninos, Exploradores, Navegadores e Mestres.</p></div></div>
+                    <div class="recurso"><div class="ic"><i class="fas fa-universal-access" aria-hidden="true"></i></div><div><h3>Acessibilidade</h3><p>Modo para daltonismo, redução de movimento e volumes separados para música e efeitos.</p></div></div>
+                    <div class="recurso"><div class="ic"><i class="fas fa-language" aria-hidden="true"></i></div><div><h3>Quatro idiomas</h3><p>Português, inglês, espanhol e francês.</p></div></div>
+                    <div class="recurso"><div class="ic"><i class="fas fa-cloud-arrow-up" aria-hidden="true"></i></div><div><h3>Progresso salvo</h3><p>Os pais podem ligar uma conta Google para guardar o progresso na nuvem (opcional).</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pais">
+            <div class="container">
+                <div class="card pais">
+                    <span class="eyebrow">Para os pais</span>
+                    <h2>O que os pais vão adorar</h2>
+                    <p>Criado para a tranquilidade da família e o desenvolvimento da criança.</p>
+                    <div class="selos">
+                        <span><i class="fas fa-comment-slash" aria-hidden="true"></i> Sem chat</span>
+                        <span><i class="fas fa-lock" aria-hidden="true"></i> Portão dos pais em compras e links</span>
+                        <span><i class="fas fa-wifi" aria-hidden="true"></i> Joga sem internet</span>
+                        <span><i class="fas fa-child-reaching" aria-hidden="true"></i> Anúncios só de classificação Livre</span>
+                        <span><i class="fas fa-location-dot" aria-hidden="true"></i> Não usa localização</span>
+                        <span><i class="fas fa-gem" aria-hidden="true"></i> Premium sem anúncios</span>
+                    </div>
+                    <p><a href="privacidade.html">Veja como cuidamos dos dados na Política de Privacidade</a>.</p>
+                    <div class="cta-final">
+                        <h3>Dê ao seu filho o superpoder da matemática!</h3>
+                        <a href="https://play.google.com/store/apps/details?id=com.marquerafique.matemgicakids" target="_blank" rel="noopener" class="btn btn-primary">
+                            <i class="fab fa-google-play" aria-hidden="true"></i> Baixar grátis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <p class="ficha">
+                <strong>Ficha técnica:</strong> Android 7.0 ou superior (SDK 24+) • Versão 2.1.0 •
+                Pacote com.marquerafique.matemgicakids • Desenvolvedor: Marque Rafique
+            </p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <span>© 2026 Matemágica Kids • Marque Rafique</span>
+            <nav aria-label="Rodapé">
+                <a href="index.html">Início</a>
+                <a href="ovelhinhasdafe.html">Ovelhinhas da Fé</a>
+                <a href="privacidade.html">Privacidade</a>
+                <a href="termos.html">Termos de Uso</a>
+                <a href="mailto:suporte@marquerafique.com.br">Suporte</a>
+            </nav>
+        </div>
+    </footer>
+    <script src="js/particulas.js" defer></script>
 </body>
 </html>

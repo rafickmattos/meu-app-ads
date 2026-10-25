@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Ovelhinhas da Fé | Histórias bíblicas para crianças</title>
+    <meta name="description" content="Ovelhinhas da Fé: histórias da Bíblia ilustradas e narradas para crianças, com quiz, selos de conquista, lições de fé e versículo do dia. App Android sem anúncios.">
+    <link rel="canonical" href="https://www.marquerafique.com.br/ovelhinhasdafe.html">
+    <link rel="icon" href="img/ovelhinhas/icone.png">
+
+    <meta property="og:title" content="Ovelhinhas da Fé | Histórias bíblicas para crianças">
+    <meta property="og:description" content="Histórias da Bíblia ilustradas e narradas, com quiz da Arca e lições de fé. Sem anúncios.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.marquerafique.com.br/ovelhinhasdafe.html">
+    <meta property="og:image" content="https://www.marquerafique.com.br/img/ovelhinhas/noe.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilo.css">
+
+    <style>
+        /* Paleta própria: tons claros de céu, campo e madeira, como no app */
+        :root {
+            --accent: #b45309;
+            --bg: #fffaf0;
+            --bg-2: #fef3c7;
+            --card: #ffffff;
+            --card-2: #fffdf7;
+            --text: #3b2a1a;
+            --muted: #6b5a48;
+            --border: rgba(120, 80, 30, 0.14);
+            --grass: #65a30d;
+            --sky: #0ea5e9;
+        }
+        body {
+            background: linear-gradient(180deg, #e0f2fe 0%, #fffaf0 38%, #fffaf0 100%);
+            background-color: #fffaf0;
+        }
+        .topbar { background: rgba(255, 250, 240, 0.9); }
+        .nav-links a:hover, .nav-links a[aria-current="page"] { background: rgba(180, 83, 9, 0.08); }
+        .card:hover { box-shadow: 0 18px 40px rgba(120, 80, 30, 0.15); border-color: rgba(180, 83, 9, 0.3); }
+        .tag { background: #fff; }
+        .eyebrow { background: #fff; }
+
+        .hero { padding: 3.5rem 0 2rem; }
+        .hero .container { display: grid; grid-template-columns: 1.15fr 1fr; gap: 3rem; align-items: center; }
+        .hero .logo { width: min(380px, 85vw); margin-bottom: 1rem; filter: drop-shadow(0 10px 18px rgba(120, 80, 30, .25)); }
+        .hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.7rem); font-weight: 900; margin-bottom: 1rem; }
+        .hero .lead { font-size: 1.12rem; max-width: 560px; }
+        .hero .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+        .hero .req { font-size: .85rem; margin-top: .75rem; }
+        .btn { color: var(--text); background: #fff; }
+        .btn-play { background: #1f2937; color: #fff; border-color: transparent; }
+        .btn-play small { color: #d1d5db; }
+
+        .quadro { position: relative; justify-self: center; width: min(440px, 90vw); }
+        .quadro .principal { width: 100%; border-radius: 28px; box-shadow: 0 25px 50px rgba(120, 80, 30, .3); border: 6px solid #fff; transform: rotate(-2deg); }
+        .quadro .menor { position: absolute; width: 42%; bottom: -12%; left: -10%; border-radius: 20px; border: 5px solid #fff; box-shadow: 0 18px 36px rgba(120, 80, 30, .3); transform: rotate(4deg); }
+        .quadro .ovelha { position: absolute; width: 30%; top: -10%; right: -6%; border-radius: 26%; box-shadow: 0 14px 28px rgba(120, 80, 30, .3); animation: pular 4s ease-in-out infinite; }
+        @keyframes pular { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-10px) rotate(-4deg); } }
+
+        .recursos { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .recursos .card i { font-size: 1.5rem; width: 52px; height: 52px; display: grid; place-items: center; border-radius: 14px; margin-bottom: .9rem; }
+        .recursos .card h3 { font-size: 1.1rem; margin-bottom: .35rem; }
+        .recursos .card p { margin: 0; font-size: .95rem; }
+        .c1 i { background: #fef3c7; color: #b45309; }
+        .c2 i { background: #e0f2fe; color: #0369a1; }
+        .c3 i { background: #dcfce7; color: #15803d; }
+        .c4 i { background: #fce7f3; color: #be185d; }
+
+        .historias { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+        .historia { padding: 0; overflow: hidden; }
+        .historia img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+        .historia div { padding: 1rem 1.2rem 1.2rem; }
+        .historia h3 { margin: 0 0 .25rem; font-size: 1.1rem; }
+        .historia p { margin: 0; font-size: .92rem; }
+
+        .passos { counter-reset: passo; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+        .passo { position: relative; padding-top: 2.6rem; }
+        .passo::before {
+            counter-increment: passo; content: counter(passo);
+            position: absolute; top: 1.1rem; left: 1.5rem; width: 32px; height: 32px; border-radius: 50%;
+            display: grid; place-items: center; background: var(--grass); color: #fff; font-weight: 900;
+        }
+        .passo h3 { font-size: 1.05rem; margin: .5rem 0 .3rem; }
+        .passo p { margin: 0; font-size: .93rem; }
+
+        .pais { text-align: center; background: linear-gradient(180deg, #ffffff, #fefce8); }
+        .pais .selos { display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; margin: 1.5rem 0; }
+        .pais .selos span { display: inline-flex; align-items: center; gap: .5rem; background: #fff; border: 1px solid var(--border); padding: .55rem 1rem; border-radius: 999px; font-size: .93rem; }
+        .pais .selos i { color: var(--grass); }
+        .planos { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 1.25rem 0; }
+        .planos div { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1.4rem; min-width: 200px; }
+        .planos strong { display: block; font-size: 1.05rem; }
+        .planos span { color: var(--muted); font-size: .9rem; }
+        .cta-final .btn-primary { --accent: #15803d; }
+        .ficha { font-size: .85rem; color: var(--muted); text-align: center; }
+        .site-footer { background: #fef3c7; }
+
+        @media (max-width: 860px) {
+            .hero .container { grid-template-columns: 1fr; text-align: center; }
+            .hero .lead { margin: 0 auto; }
+            .hero .actions { justify-content: center; }
+            .quadro { width: min(340px, 82vw); margin-bottom: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+    <header class="topbar">
+        <div class="container">
+            <a class="brand" href="index.html" aria-label="Voltar ao início">
+                <img src="img/ovelhinhas/icone.png" alt="" width="44" height="44" style="border-radius:12px">
+                <span><strong>Ovelhinhas da Fé</strong><small>por Marque Rafique</small></span>
+            </a>
+            <nav class="nav-links" aria-label="Seções">
+                <a href="#recursos">O app</a>
+                <a href="#historias">Histórias</a>
+                <a href="#como-funciona">Como funciona</a>
+                <a href="#pais">Para os pais</a>
+                <a href="index.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> Início</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <section class="hero">
+            <div class="container">
+                <div>
+                    <img class="logo" src="img/ovelhinhas/logo.png" alt="Ovelhinhas da Fé">
+                    <h1>As histórias da Bíblia contadas para os pequenos</h1>
+                    <p class="lead">
+                        Histórias bíblicas ilustradas e narradas com carinho, para ouvir antes de dormir, aprender
+                        brincando e conversar em família. Depois de cada história, a criança responde ao quiz da Arca,
+                        ganha selos e descobre uma lição de fé.
+                    </p>
+                    <div class="actions">
+                        <span class="btn btn-play" style="opacity:.75;cursor:default" aria-label="Em breve no Google Play">
+                            <i class="fab fa-google-play" aria-hidden="true"></i>
+                            <span><small>Em breve no</small>Google Play</span>
+                        </span>
+                        <a href="#historias" class="btn">Ver histórias</a>
+                    </div>
+                    <p class="req">Sem anúncios • Requer Android 7.0 ou superior</p>
+                </div>
+                <div class="quadro">
+                    <img class="principal" src="img/ovelhinhas/noe.jpg" alt="Ilustração da Arca de Noé com animais e arco-íris" width="640" height="640">
+                    <img class="menor" src="img/ovelhinhas/davi.jpg" alt="Ilustração de Davi diante do gigante Golias" loading="lazy">
+                    <img class="ovelha" src="img/ovelhinhas/icone.png" alt="" width="140" height="140">
+                </div>
+            </div>
+        </section>
+
+        <section id="recursos">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">O app</span>
+                    <h2>Fé, imaginação e aprendizado</h2>
+                    <p>Tudo pensado para a criança explorar sozinha ou ao lado da família.</p>
+                </div>
+                <div class="recursos">
+                    <div class="card c1"><i class="fas fa-book-open" aria-hidden="true"></i><h3>Estante de histórias</h3><p>Histórias do Velho e do Novo Testamento, com cenas ilustradas, narração e efeitos sonoros.</p></div>
+                    <div class="card c2"><i class="fas fa-question" aria-hidden="true"></i><h3>Quiz da Arca</h3><p>Perguntas narradas sobre cada história, com explicação quando a criança acerta.</p></div>
+                    <div class="card c3"><i class="fas fa-award" aria-hidden="true"></i><h3>Selos de conquista</h3><p>Acertou todo o quiz? Ganha um selo para a coleção.</p></div>
+                    <div class="card c4"><i class="fas fa-heart" aria-hidden="true"></i><h3>Lições de fé</h3><p>Ao terminar a história, a criança descobre a lição e o versículo para guardar no coração.</p></div>
+                    <div class="card c1"><i class="fas fa-sun" aria-hidden="true"></i><h3>Versículo do dia</h3><p>Um versículo novo todos os dias, que o app também lê em voz alta.</p></div>
+                    <div class="card c2"><i class="fas fa-moon" aria-hidden="true"></i><h3>Hora de dormir</h3><p>Temporizador que encerra o app sozinho, ideal para ouvir histórias na cama.</p></div>
+                    <div class="card c3"><i class="fas fa-download" aria-hidden="true"></i><h3>Ouça sem internet</h3><p>Baixe as histórias favoritas para ouvir em viagens ou sem conexão.</p></div>
+                    <div class="card c4"><i class="fas fa-calendar-check" aria-hidden="true"></i><h3>Datas especiais</h3><p>Histórias em destaque no Natal, na Páscoa, no Dia das Crianças, das Mães e dos Pais.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="historias">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">Histórias</span>
+                    <h2>Grandes histórias para pequenos corações</h2>
+                    <p>Novas histórias chegam ao app com frequência.</p>
+                </div>
+                <div class="historias">
+                    <article class="card historia">
+                        <img src="img/ovelhinhas/noe_cena.jpg" alt="Noé construindo a arca" loading="lazy">
+                        <div><h3>Noé e a grande Arca</h3><p>A confiança de Noé, os animais de dois em dois e a promessa do arco-íris.</p></div>
+                    </article>
+                    <article class="card historia">
+                        <img src="img/ovelhinhas/davi.jpg" alt="Davi com a funda diante de Golias" loading="lazy" style="object-position:center 72%">
+                        <div><h3>Davi e Golias</h3><p>Um menino pastor mostra que a coragem vem de Deus, e não do tamanho.</p></div>
+                    </article>
+                    <article class="card historia">
+                        <img src="img/ovelhinhas/paisagem.jpg" alt="Campo verde com casinhas e céu azul" loading="lazy">
+                        <div><h3>E muitas outras</h3><p>Histórias do Velho e do Novo Testamento para descobrir na estante.</p></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-funciona">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">Como funciona</span>
+                    <h2>Uma história, muitas descobertas</h2>
+                </div>
+                <div class="passos">
+                    <div class="card passo"><h3>Escolha a história</h3><p>Na estante, por testamento, favoritas ou "continue de onde parou".</p></div>
+                    <div class="card passo"><h3>Ouça e veja</h3><p>Cada cena tem ilustração, narração e efeitos.</p></div>
+                    <div class="card passo"><h3>Responda ao quiz</h3><p>Perguntas simples para lembrar o que aconteceu.</p></div>
+                    <div class="card passo"><h3>Ganhe o selo e a lição</h3><p>A conquista vai para o perfil e a lição de fé fica guardada.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pais">
+            <div class="container">
+                <div class="card pais">
+                    <span class="eyebrow">Para os pais</span>
+                    <h2>Seguro para a família</h2>
+                    <p>Um ambiente tranquilo, sem distrações e sem surpresas.</p>
+                    <div class="selos">
+                        <span><i class="fas fa-ban" aria-hidden="true"></i> Sem anúncios</span>
+                        <span><i class="fas fa-comment-slash" aria-hidden="true"></i> Sem chat</span>
+                        <span><i class="fas fa-lock" aria-hidden="true"></i> Controle dos pais</span>
+                        <span><i class="fas fa-bell" aria-hidden="true"></i> Lembrete diário no horário que você escolher</span>
+                        <span><i class="fas fa-location-dot" aria-hidden="true"></i> Não usa localização</span>
+                        <span><i class="fas fa-fire" aria-hidden="true"></i> Sequência de dias para criar o hábito</span>
+                    </div>
+                    <h3>Ovelhinhas Premium</h3>
+                    <p>Libera todas as histórias. A assinatura é opcional, feita pela Google Play e protegida pelo controle dos pais.</p>
+                    <div class="planos">
+                        <div><strong>Plano mensal</strong><span>Renova todo mês</span></div>
+                        <div><strong>Plano anual</strong><span>Renova todo ano</span></div>
+                    </div>
+                    <p style="font-size:.9rem">Cancele quando quiser na Google Play. Detalhes nos <a href="termos.html">Termos de Uso</a> e na <a href="privacidade.html">Política de Privacidade</a>.</p>
+                    <div class="cta-final">
+                        <span class="btn btn-primary" style="opacity:.75;cursor:default">
+                            <i class="fab fa-google-play" aria-hidden="true"></i> Em breve no Google Play
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <p class="ficha">
+                <strong>Ficha técnica:</strong> Android 7.0 ou superior (SDK 24+) •
+                Pacote com.marquerafique.ovelhinhasdafe • Desenvolvedor: Marque Rafique
+            </p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <span>© 2026 Ovelhinhas da Fé • Marque Rafique</span>
+            <nav aria-label="Rodapé">
+                <a href="index.html">Início</a>
+                <a href="matemagicakids.html">Matemágica Kids</a>
+                <a href="privacidade.html">Privacidade</a>
+                <a href="termos.html">Termos de Uso</a>
+                <a href="mailto:suporte@marquerafique.com.br">Suporte</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

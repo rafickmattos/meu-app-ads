@@ -1,320 +1,241 @@
 <!doctype html>
-<html lang="pt-pt">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Marque Rafique | Developer</title>
-    <meta name="description" content="Marque Rafique — Estudante de Análise e Desenvolvimento de Sistemas. Desenvolvedor Android, projetos IoT com ESP32 e aplicações Web.">
-    
-    <!-- Meta tags para redes sociais -->
-    <meta property="og:title" content="Marque Rafique | Developer">
-    <meta property="og:description" content="Estudante e desenvolvedor focado em soluções mobile e hardware inteligente.">
+    <title>Marque Rafique | Apps educativos para crianças</title>
+    <meta name="description" content="Marque Rafique cria apps Android educativos e seguros para crianças: Matemágica Kids (matemática) e Ovelhinhas da Fé (histórias bíblicas). Também desenvolve projetos IoT com ESP32 e Web.">
+    <link rel="canonical" href="https://www.marquerafique.com.br/">
+    <link rel="icon" href="logo_1.png">
+
+    <meta property="og:title" content="Marque Rafique | Apps educativos para crianças">
+    <meta property="og:description" content="Matemágica Kids e Ovelhinhas da Fé: aprender brincando, com segurança para toda a família.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.marquerafique.com.br">
-    <meta property="og:image" content="https://placehold.co/1200x630/1e293b/FFF?text=Marque+Rafique">
-    
-    <!-- Ícones -->
+    <meta property="og:url" content="https://www.marquerafique.com.br/">
+    <meta property="og:image" content="https://www.marquerafique.com.br/img/matemagica/og.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilo.css">
 
     <style>
-        :root {
-            --primary: #2563eb;
-            --bg: #0f172a;
-            --card: #0b1220;
-            --muted: #94a3b8;
-            --light: #f8fafc;
-            --glass: rgba(255,255,255,0.03);
-            --radius: 12px;
-            --maxw: 1100px;
+        .hero { padding: 4.5rem 0 3rem; }
+        .hero .container { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: center; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 900; margin-bottom: 1rem; }
+        .hero h1 span { background: linear-gradient(90deg, #60a5fa, #f472b6, #facc15); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .hero .lead { font-size: 1.15rem; max-width: 560px; }
+        .hero .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0; }
+        .hero .actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+
+        .profile-wrap { position: relative; justify-self: center; width: min(320px, 80vw); aspect-ratio: 1; }
+        .profile-wrap::before {
+            content: ''; position: absolute; inset: -18px; border-radius: 32px; z-index: -1;
+            background: conic-gradient(from 180deg, #3b82f6, #f472b6, #facc15, #22c55e, #3b82f6);
+            filter: blur(28px); opacity: .45;
         }
+        .profile-wrap img { width: 100%; height: 100%; object-fit: cover; border-radius: 28px; border: 1px solid var(--border); box-shadow: 0 25px 50px rgba(0,0,0,.45); }
 
-        * { box-sizing: border-box; }
-        html, body { height: 100%; }
+        .app-card { display: flex; flex-direction: column; padding: 0; overflow: hidden; }
+        .app-card .banner { height: 170px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .app-card .banner img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; }
+        .app-card .banner img.icone { position: relative; width: 104px; height: 104px; border-radius: 26px; box-shadow: 0 12px 30px rgba(0,0,0,.45); background: #fff; }
+        .app-card .body { padding: 1.4rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
+        .app-card h3 { font-size: 1.35rem; margin: 0; }
+        .app-card .body p { flex: 1; }
+        .app-card .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: .75rem; }
+        .app-card .links { display: flex; gap: .6rem; flex-wrap: wrap; }
+        .app-card .links .btn { padding: .6rem 1rem; font-size: .92rem; }
+        .mk .banner { background: linear-gradient(135deg, #1e3a8a, #7c3aed); }
+        .ov .banner { background: linear-gradient(135deg, #f59e0b, #84cc16); }
+        .iot .banner { background: linear-gradient(135deg, #0f766e, #0e7490); }
+        .iot .banner i { font-size: 4rem; color: rgba(255,255,255,.9); position: relative; }
+        .mk .btn-primary { --accent: #7c3aed; }
+        .ov .btn-primary { --accent: #d97706; }
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(180deg,var(--bg),#071024 120%);
-            color: var(--light);
-            display: flex;
-            justify-content: center;
-            padding: 2rem;
-            line-height: 1.6;
-        }
+        .valores .grid { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+        .valores .card i { font-size: 1.6rem; color: var(--accent); margin-bottom: .75rem; }
+        .valores .card h3 { font-size: 1.1rem; margin-bottom: .35rem; }
+        .valores .card p { margin: 0; font-size: .95rem; }
 
-        .page { width: 100%; max-width: var(--maxw); }
+        .contato .card { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+        .contato .card h2 { margin-bottom: .25rem; font-size: 1.5rem; }
+        .contato .card p { margin: 0; }
+        .contato .actions { display: flex; gap: .6rem; flex-wrap: wrap; }
 
-        /* Header & Nav */
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .brand { display: flex; gap: 1rem; align-items: center; }
-
-        .avatar {
-            /* Removido o estilo de círculo/background para a logo ficar livre */
-            display: flex;
-            align-items: center;
-        }
-
-        nav a {
-            color: var(--muted);
-            text-decoration: none;
-            margin-left: 1.2rem;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-        nav a:hover { color: var(--light); }
-
-        /* Main Content */
-        main {
-            background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-            padding: 2rem;
-            border-radius: var(--radius);
-            box-shadow: 0 8px 30px rgba(2,6,23,0.6);
-            backdrop-filter: blur(6px);
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .hero {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            flex-wrap: wrap-reverse;
-            justify-content: space-between;
-        }
-
-        .hero-left { flex: 1 1 300px; }
-
-        h1 { margin: 0 0 .5rem 0; color: var(--primary); font-size: 2.2rem; }
-        .role { margin: 0 0 1rem 0; color: var(--muted); font-size: 1.1rem; }
-        
-        .actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.5rem; }
-
-        .btn {
-            display: inline-flex; align-items: center; gap: .5rem;
-            padding: .7rem 1.2rem;
-            border-radius: 8px;
-            background: var(--glass);
-            color: var(--light);
-            text-decoration: none;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all .2s ease;
-            cursor: pointer;
-            font-weight: 500;
-        }
-        .btn:hover { transform: translateY(-2px); background: rgba(255,255,255,0.1); }
-        .primary { background: var(--primary); border-color: var(--primary); color: white; }
-        .primary:hover { background: #1d4ed8; }
-
-        .tags { margin: 1.5rem 0; }
-        .tag {
-            display: inline-block;
-            background: rgba(15, 23, 42, 0.6);
-            color: var(--muted);
-            padding: .3rem .8rem;
-            border-radius: 999px;
-            margin-right: .5rem;
-            font-size: .85rem;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* Parallax Profile */
-        .parallax-container {
-            width: 240px; height: 240px;
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .profile-pic {
-            width: 120%; height: 120%;
-            object-fit: cover;
-            position: absolute; top: -10%; left: -10%;
-            transition: transform 0.1s linear;
-        }
-
-        /* Grid Layouts */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .card {
-            background: rgba(11, 18, 32, 0.6);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: transform .2s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.1); }
-        .card h3 { margin-top: 0; color: var(--light); }
-        .card p { color: var(--muted); font-size: 0.95rem; flex-grow: 1; }
-        
-        .card-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .card-link:hover { text-decoration: underline; }
-
-        /* Footer */
-        footer {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            color: var(--muted);
-            font-size: 0.9rem;
-            text-align: center;
-        }
-        footer a { color: var(--primary); text-decoration: none; margin: 0 5px; }
-
-        @media (max-width: 768px) {
-            header { flex-direction: column; align-items: flex-start; }
-            nav { margin-top: 1rem; width: 100%; display: flex; justify-content: space-between; }
-            nav a { margin: 0; }
-            .hero { flex-direction: column; text-align: center; }
-            .hero-left { width: 100%; }
-            .parallax-container { margin: 0 auto; }
-            .actions { justify-content: center; }
+        @media (max-width: 860px) {
+            .hero .container { grid-template-columns: 1fr; text-align: center; }
+            .hero .lead { margin: 0 auto 1rem; }
+            .hero .tags, .hero .actions { justify-content: center; }
+            .profile-wrap { order: -1; width: min(240px, 70vw); }
         }
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-    <div class="page">
-        <header>
-            <div class="brand">
-                <div class="avatar">
-                    <!-- Logo Grande e Solta -->
-                    <img src="logo_1.png" alt="Logo Marque Rafique" style="height: 120px; width: auto; object-fit: contain;">
-                </div>
-                <div>
-                    <div style="font-weight:700; font-size:1.1rem;">Marque Rafique</div>
-                    <div style="font-size:.85rem; color:var(--muted)">Dev Mobile • IoT • Web</div>
-                </div>
-            </div>
-
-            <nav>
-                <a href="#projetos">Projetos</a>
-                <a href="#habilidades">Skills</a>
+    <header class="topbar">
+        <div class="container">
+            <a class="brand" href="index.html">
+                <img src="logo_1.png" alt="" width="44" height="44">
+                <span><strong>Marque Rafique</strong><small>Apps educativos • Android • IoT</small></span>
+            </a>
+            <nav class="nav-links" aria-label="Principal">
+                <a href="#apps">Apps</a>
+                <a href="#valores">Compromissos</a>
                 <a href="#contato">Contato</a>
                 <a href="privacidade.html">Privacidade</a>
             </nav>
-        </header>
+        </div>
+    </header>
 
-        <main>
-            <section class="hero">
-                <div class="hero-left">
-                    <h1>Olá, sou Marque Rafique</h1>
-                    <p class="role">Desenvolvedor Android & Especialista em IoT</p>
-                    <p class="bio">
-                        Transformo ideias em aplicações móveis funcionais e hardware inteligente. 
-                        Com foco em performance e usabilidade, crio soluções que conectam o mundo físico ao digital.
+    <main id="conteudo">
+        <section class="hero">
+            <div class="container">
+                <div>
+                    <span class="eyebrow">Desenvolvedor Android</span>
+                    <h1>Apps que fazem as crianças <span>aprender brincando</span></h1>
+                    <p class="lead">
+                        Sou Marque Rafique, estudante de Análise e Desenvolvimento de Sistemas. Crio jogos e apps
+                        educativos para Android pensados para crianças e para a tranquilidade das famílias, e também
+                        projetos de hardware inteligente com ESP32.
                     </p>
-
                     <div class="tags">
-                        <span class="tag"><i class="fab fa-android"></i> Android / Kotlin</span>
-                        <span class="tag"><i class="fas fa-microchip"></i> ESP32 / C++</span>
-                        <span class="tag"><i class="fas fa-code"></i> Web Dev</span>
+                        <span class="tag"><i class="fab fa-android" aria-hidden="true"></i> Kotlin • Jetpack Compose</span>
+                        <span class="tag"><i class="fas fa-fire" aria-hidden="true"></i> Firebase</span>
+                        <span class="tag"><i class="fas fa-microchip" aria-hidden="true"></i> ESP32 / C++</span>
+                        <span class="tag"><i class="fas fa-code" aria-hidden="true"></i> Web</span>
                     </div>
-
                     <div class="actions">
-                        <a class="btn primary" href="mailto:dev@marquerafique.com.br">
-                            <i class="fas fa-envelope"></i> Fale Comigo
-                        </a>
-                        <!-- Botão GitHub Removido -->
+                        <a class="btn btn-primary" href="#apps"><i class="fas fa-mobile-screen" aria-hidden="true"></i> Conhecer os apps</a>
+                        <a class="btn" href="mailto:dev@marquerafique.com.br"><i class="fas fa-envelope" aria-hidden="true"></i> Fale comigo</a>
                     </div>
                 </div>
-
-                <div class="parallax-container" id="parallax-wrap">
-                    <img class="profile-pic" src="perfil.png" alt="Foto de Marque Rafique" data-speed="0.5">
+                <div class="profile-wrap">
+                    <img src="perfil.png" alt="Foto de Marque Rafique" width="320" height="320">
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="projetos" style="margin-top: 3rem;">
-                <h2 style="color: var(--primary);">Projetos em Destaque</h2>
+        <section id="apps">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">Projetos</span>
+                    <h2>Meus apps</h2>
+                    <p>Cada app tem a sua página com detalhes, personagens e o link para baixar.</p>
+                </div>
+
                 <div class="grid">
-                    
-                    <article class="card">
-                        <h3><i class="fas fa-calculator"></i> Matemágica Kids</h3>
-                        <p>App Android educativo que torna o aprendizado de matemática divertido. Página oficial com detalhes e download.</p>
-                        <small style="color:var(--primary)">Kotlin • Educacional</small>
-                        <a href="matemagicakids.html" class="card-link">
-                            Ver Página do App <i class="fas fa-arrow-right"></i>
-                        </a>
+                    <article class="card app-card mk">
+                        <div class="banner">
+                            <img class="icone" src="ic_app_novo.png" alt="Ícone do Matemágica Kids" width="104" height="104">
+                        </div>
+                        <div class="body">
+                            <h3>Matemágica Kids</h3>
+                            <div class="meta">
+                                <span class="tag">Matemática</span><span class="tag">A partir de 3 anos</span><span class="tag">Android</span>
+                            </div>
+                            <p>Um jogo de aventura em que contar, somar, multiplicar e dividir vira magia. Mais de 20 heróis, minigames, poções, selos e o Grimório mágico.</p>
+                            <div class="links">
+                                <a class="btn btn-primary" href="matemagicakids.html">Ver página <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                                <a class="btn" href="https://play.google.com/store/apps/details?id=com.marquerafique.matemgicakids" target="_blank" rel="noopener"><i class="fab fa-google-play" aria-hidden="true"></i> Google Play</a>
+                            </div>
+                        </div>
                     </article>
 
-                    <article class="card">
-                        <h3><i class="fas fa-wifi"></i> Automação Residencial</h3>
-                        <p>Sistema completo utilizando ESP32 para controle de luzes e temperatura via aplicativo móvel proprietário.</p>
-                        <small style="color:var(--primary)">IoT • C++ • MQTT</small>
-                        <span class="card-link" style="color:var(--muted); cursor:default; text-decoration:none">Em desenvolvimento</span>
+                    <article class="card app-card ov">
+                        <div class="banner">
+                            <img class="bg" src="img/ovelhinhas/paisagem.jpg" alt="" loading="lazy">
+                            <img class="icone" src="img/ovelhinhas/icone.png" alt="Ícone do Ovelhinhas da Fé" width="104" height="104" loading="lazy">
+                        </div>
+                        <div class="body">
+                            <h3>Ovelhinhas da Fé</h3>
+                            <div class="meta">
+                                <span class="tag">Histórias bíblicas</span><span class="tag">Infantil</span><span class="tag">Android</span>
+                            </div>
+                            <p>Histórias da Bíblia ilustradas e narradas para crianças, com quiz da Arca, selos de conquista, lições de fé e versículo do dia. Sem anúncios.</p>
+                            <div class="links">
+                                <a class="btn btn-primary" href="ovelhinhasdafe.html">Ver página <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                                <span class="btn" style="opacity:.7;cursor:default" aria-label="Em breve no Google Play"><i class="fab fa-google-play" aria-hidden="true"></i> Em breve</span>
+                            </div>
+                        </div>
                     </article>
 
-                    <article class="card">
-                        <h3><i class="fas fa-book-open"></i> Ecos do Passado</h3>
-                        <p>Jogo narrativo mobile com escolhas que impactam o final da história. Foco em otimização de bateria e UX.</p>
-                        <small style="color:var(--primary)">Game Dev • Android</small>
-                        <span class="card-link" style="color:var(--muted); cursor:default; text-decoration:none">Brevemente</span>
+                    <article class="card app-card iot">
+                        <div class="banner"><i class="fas fa-house-signal" aria-hidden="true"></i></div>
+                        <div class="body">
+                            <h3>Automação Residencial</h3>
+                            <div class="meta">
+                                <span class="tag">IoT</span><span class="tag">C++</span><span class="tag">MQTT</span>
+                            </div>
+                            <p>Sistema com ESP32 para controlar luzes e temperatura pelo celular, com app próprio.</p>
+                            <div class="links"><span class="tag"><i class="fas fa-screwdriver-wrench" aria-hidden="true"></i> Em desenvolvimento</span></div>
+                        </div>
                     </article>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="contato" style="margin-top: 3rem;">
-                <h2 style="color: var(--primary);">Vamos Conversar?</h2>
-                <div class="card" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; flex-direction:row;">
+        <section id="valores" class="valores">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">Para as famílias</span>
+                    <h2>Meus compromissos com as crianças</h2>
+                    <p>Os apps seguem a Política para Famílias do Google Play, a LGPD e a COPPA.</p>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <i class="fas fa-user-shield" aria-hidden="true"></i>
+                        <h3>Poucos dados</h3>
+                        <p>Só pedimos o necessário para o app funcionar. Nada de localização, contatos, câmera ou microfone.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-lock" aria-hidden="true"></i>
+                        <h3>Portão dos pais</h3>
+                        <p>Compras, links externos e configurações de conta ficam protegidos por um desafio para adultos.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-comment-slash" aria-hidden="true"></i>
+                        <h3>Sem chat</h3>
+                        <p>As crianças não conversam com desconhecidos dentro dos apps.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-trash-can" aria-hidden="true"></i>
+                        <h3>Controle total</h3>
+                        <p>Os pais podem pedir a qualquer momento para ver ou apagar os dados da criança.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contato">
+            <div class="container">
+                <div class="card">
                     <div>
-                        <p style="margin:0; color:white; font-weight:bold;">Tem um projeto em mente?</p>
-                        <p style="margin:0; font-size:0.9rem;">Respondo geralmente em até 24 horas.</p>
+                        <h2>Vamos conversar?</h2>
+                        <p>Dúvidas sobre os apps, sugestões ou parcerias. Respondo em geral em até 24 horas.</p>
                     </div>
-                    <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-                        <a href="mailto:suporte@marquerafique.com.br" class="btn">Suporte Apps</a>
-                        <a href="mailto:dev@marquerafique.com.br" class="btn primary">Contratar / Parceria</a>
+                    <div class="actions">
+                        <a href="mailto:suporte@marquerafique.com.br" class="btn"><i class="fas fa-life-ring" aria-hidden="true"></i> Suporte dos apps</a>
+                        <a href="mailto:dev@marquerafique.com.br" class="btn btn-primary"><i class="fas fa-handshake" aria-hidden="true"></i> Projetos e parcerias</a>
                     </div>
                 </div>
-            </section>
-        </main>
+            </div>
+        </section>
+    </main>
 
-        <footer>
-            <p>© 2026 Marque Rafique. Todos os direitos reservados.</p>
-            <p>
-                <a href="privacidade.html">Política de Privacidade</a> • 
-                <a href="termos.html">Termos de Uso</a> •
+    <footer class="site-footer">
+        <div class="container">
+            <span>© 2026 Marque Rafique. Todos os direitos reservados.</span>
+            <nav aria-label="Rodapé">
+                <a href="matemagicakids.html">Matemágica Kids</a>
+                <a href="ovelhinhasdafe.html">Ovelhinhas da Fé</a>
+                <a href="privacidade.html">Política de Privacidade</a>
+                <a href="termos.html">Termos de Uso</a>
                 <a href="mailto:suporte@marquerafique.com.br">Suporte</a>
-            </p>
-        </footer>
-    </div>
-
-    <script>
-        const wrap = document.getElementById('parallax-wrap');
-        const img = wrap.querySelector('.profile-pic');
-        
-        if(window.matchMedia("(min-width: 769px)").matches) {
-            wrap.addEventListener('mousemove', (e) => {
-                const x = (e.clientX - wrap.getBoundingClientRect().left) / wrap.offsetWidth - 0.5;
-                const y = (e.clientY - wrap.getBoundingClientRect().top) / wrap.offsetHeight - 0.5;
-                img.style.transform = `translate(${x * 20}px, ${y * 20}px) scale(1.1)`;
-            });
-            wrap.addEventListener('mouseleave', () => {
-                img.style.transform = `translate(0, 0) scale(1.1)`;
-            });
-        }
-    </script>
+            </nav>
+        </div>
+    </footer>
 </body>
 </html>
