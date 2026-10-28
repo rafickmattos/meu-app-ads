@@ -44,7 +44,7 @@
             <!-- ===================== PORTUGUÊS ===================== -->
             <article id="lang-pt" class="lang-section" lang="pt-BR">
                 <h1>Política de Privacidade</h1>
-                <p class="meta">Última atualização: 25 de outubro de 2026</p>
+                <p class="meta">Última atualização: 28 de outubro de 2026</p>
 
                 <p>
                     Esta política explica como os aplicativos <strong>Matemágica Kids</strong> e <strong>Ovelhinhas da Fé</strong>
@@ -85,7 +85,8 @@
                                 <tr><td>Nome ou apelido escolhido para o perfil, idade, avatar, progresso, moedas, selos e configurações</td><td>Montar o perfil do jogo e ajustar a dificuldade à idade</td><td>Somente no aparelho, salvo se os pais ligarem a conta Google (abaixo)</td></tr>
                                 <tr><td>Conta Google (opcional, ligada pelos pais nas Configurações): identificador da conta, nome e e-mail fornecidos pelo Google, e uma cópia do perfil do jogo</td><td>Guardar o progresso na nuvem e recuperá-lo em outro aparelho</td><td>Google Firebase (Authentication e Firestore)</td></tr>
                                 <tr><td>Modo online (opcional): um identificador anônimo, um <strong>apelido gerado automaticamente pelo app</strong> (não é o nome da criança), herói escolhido, pontos, vitórias e derrotas</td><td>Fazer funcionar os duelos, as batalhas e o ranking</td><td>Google Firebase. O apelido e os pontos aparecem para outros jogadores no ranking. Não há chat.</td></tr>
-                                <tr><td>Relatórios de falha: modelo do aparelho, versão do Android e do app, e o registro técnico do erro</td><td>Encontrar e corrigir travamentos</td><td>Firebase Crashlytics (Google)</td></tr>
+                                <tr><td>Relatórios de falha e de erros: modelo do aparelho, versão do Android e do app, e o registro técnico do erro. <strong>Sem nome, idade ou conta</strong> do jogador</td><td>Encontrar e corrigir travamentos e erros</td><td>Firebase Crashlytics e Google Firestore (Google)</td></tr>
+                                <tr><td>Dados técnicos de uso, <strong>sem nome, idade ou avatar</strong> (só com conta Google ligada ou no modo online): tipo de entrada (anônima ou Google), data de criação e do último acesso, dias de uso, versão do app, idioma, se é Premium, total de acertos e erros e modos de jogo visitados</td><td>Saber quantas crianças usam o app e melhorar os exercícios</td><td>Google Firestore</td></tr>
                                 <tr><td>Compras feitas no app</td><td>Liberar o Premium e os itens comprados</td><td>Google Play. Não recebemos dados de cartão.</td></tr>
                             </tbody>
                         </table>
@@ -146,7 +147,7 @@
                 <ul>
                     <li>Os dados no aparelho ficam até o app ser desinstalado ou o progresso ser apagado nas Configurações.</li>
                     <li>Os dados na nuvem ficam enquanto a conta existir. Pedidos de exclusão são atendidos em até 15 dias.</li>
-                    <li>Os relatórios de falha são apagados automaticamente pelo Crashlytics após 90 dias.</li>
+                    <li>Os relatórios de falha são apagados automaticamente pelo Crashlytics após 90 dias. Os resumos de erros guardados no Firestore não identificam o jogador nem a conta.</li>
                 </ul>
 
                 <h2 id="pt-direitos">8. Seus direitos e como apagar os dados</h2>
@@ -174,7 +175,7 @@
             <!-- ===================== ENGLISH ===================== -->
             <article id="lang-en" class="lang-section" lang="en" hidden>
                 <h1>Privacy Policy</h1>
-                <p class="meta">Last updated: October 25, 2026</p>
+                <p class="meta">Last updated: October 28, 2026</p>
 
                 <p>
                     This policy explains how the <strong>Matemágica Kids</strong> and <strong>Ovelhinhas da Fé</strong> apps
@@ -215,7 +216,8 @@
                                 <tr><td>Name or nickname chosen for the profile, age, avatar, progress, coins, badges and settings</td><td>Build the game profile and adapt difficulty to the child's age</td><td>Only on the device, unless parents link a Google account (below)</td></tr>
                                 <tr><td>Google account (optional, linked by parents in Settings): account identifier, name and email provided by Google, and a copy of the game profile</td><td>Back up progress to the cloud and restore it on another device</td><td>Google Firebase (Authentication and Firestore)</td></tr>
                                 <tr><td>Online mode (optional): an anonymous identifier, a <strong>nickname generated automatically by the app</strong> (not the child's name), chosen hero, points, wins and losses</td><td>Run duels, battles and the leaderboard</td><td>Google Firebase. The nickname and points are shown to other players on the leaderboard. There is no chat.</td></tr>
-                                <tr><td>Crash reports: device model, Android and app version, and the technical error log</td><td>Find and fix crashes</td><td>Firebase Crashlytics (Google)</td></tr>
+                                <tr><td>Crash and error reports: device model, Android and app version, and the technical error log. <strong>No name, age or account</strong> of the player</td><td>Find and fix crashes and errors</td><td>Firebase Crashlytics and Google Firestore (Google)</td></tr>
+                                <tr><td>Technical usage data, <strong>without name, age or avatar</strong> (only with a linked Google account or in online mode): sign-in type (anonymous or Google), creation and last-access dates, active days, app version, language, Premium status, total correct and wrong answers, and game modes visited</td><td>Know how many children use the app and improve the exercises</td><td>Google Firestore</td></tr>
                                 <tr><td>In-app purchases</td><td>Unlock Premium and purchased items</td><td>Google Play. We never receive card details.</td></tr>
                             </tbody>
                         </table>
@@ -276,7 +278,7 @@
                 <ul>
                     <li>Data on the device stays until the app is uninstalled or progress is erased in Settings.</li>
                     <li>Cloud data is kept while the account exists. Deletion requests are handled within 15 days.</li>
-                    <li>Crash reports are deleted automatically by Crashlytics after 90 days.</li>
+                    <li>Crash reports are deleted automatically by Crashlytics after 90 days. Error summaries kept in Firestore do not identify the player or the account.</li>
                 </ul>
 
                 <h2 id="en-rights">8. Your rights and how to delete data</h2>
